@@ -1,4 +1,4 @@
-package front;
+package front.controllers;
 
 import business.UserBusiness;
 import com.jfoenix.controls.JFXButton;
@@ -23,7 +23,7 @@ public class RegisterController {
     private void ReturnToLogin() throws IOException {
         Stage mainStage = (Stage)btnClose.getScene().getWindow();
         mainStage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("LoginWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../views/LoginWindow.fxml"));
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         Stage primaryStage = new Stage();

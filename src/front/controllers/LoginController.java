@@ -1,4 +1,4 @@
-package front;
+package front.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +22,7 @@ public class LoginController {
     public void btnLogin_Click() throws IOException {
         Stage LoginStage = (Stage)btnLogin.getScene().getWindow();
         LoginStage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../views/MainWindow.fxml"));
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         Stage primaryStage = new Stage();
@@ -34,7 +34,7 @@ public class LoginController {
     public void btnRegister_Click() throws IOException {
         Stage LoginStage = (Stage)btnLogin.getScene().getWindow();
         LoginStage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("RegisterWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../views/RegisterWindow.fxml"));
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         Stage primaryStage = new Stage();

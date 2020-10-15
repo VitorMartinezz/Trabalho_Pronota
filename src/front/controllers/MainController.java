@@ -1,4 +1,4 @@
-package front;
+package front.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +23,7 @@ public class MainController {
 
         Stage mainStage = (Stage)btnClose.getScene().getWindow();
         mainStage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("LoginWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../views/LoginWindow.fxml"));
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         Stage primaryStage = new Stage();
@@ -38,18 +38,18 @@ public class MainController {
         apViewer.getChildren().setAll(ap);
     }
     public void btnHome_Click() throws IOException {
-        SwitchView("views/HomeView.fxml");
+        SwitchView("../views/HomeView.fxml");
     }
     public void btnGrades_Click() throws IOException {
-        SwitchView("views/GradesView.fxml");
+        SwitchView("../views/GradesView.fxml");
     }
     public void btnStudy_Click() throws IOException {
-        SwitchView("views/StudyView.fxml");
+        SwitchView("../views/StudyView.fxml");
     }
     public void btnCalender_Click() throws IOException {
-        SwitchView("views/CalenderView.fxml");
+        SwitchView("../views/CalenderView.fxml");
     }
     public void btnFeedback_Click() throws IOException {
-        SwitchView("views/FeedbackView.fxml");
+        SwitchView("../views/FeedbackView.fxml");
     }
 }
