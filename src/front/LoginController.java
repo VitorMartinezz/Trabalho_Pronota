@@ -1,4 +1,4 @@
-package sample;
+package front;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXMLLoader;
