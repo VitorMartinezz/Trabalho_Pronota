@@ -2,15 +2,28 @@ package common.VO;
 
 import common.generic.model;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 public class User extends model {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @ManyToOne
     private Role role;
     private String username;
     private String email;
     private String password;
     private LocalDateTime createdAt;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Role getRole() {
         return role;

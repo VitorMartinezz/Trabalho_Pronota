@@ -8,6 +8,10 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 public class Main extends Application {
 
     @Override
@@ -23,6 +27,9 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("teste");
+        EntityManager createEntityManager = emf.createEntityManager();
+        emf.close();
         launch(args);
     }
 }
