@@ -2,6 +2,7 @@ package front.controllers;
 
 import business.UserBusiness;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import common.VO.User;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,7 @@ public class RegisterController {
     public JFXButton btnCreate;
     public JFXTextField txtEmail;
     public JFXTextField txtUsername;
-    public JFXTextField txtPassword;
+    public JFXPasswordField txtPassword;
 
     private void ReturnToLogin() throws IOException {
         Stage mainStage = (Stage)btnClose.getScene().getWindow();
