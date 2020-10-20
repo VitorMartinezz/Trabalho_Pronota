@@ -3,11 +3,13 @@ package front.controllers;
 import business.UserBusiness;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import common.VO.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -20,6 +22,9 @@ public class RegisterController {
     public JFXTextField txtEmail;
     public JFXTextField txtUsername;
     public JFXPasswordField txtPassword;
+    public JFXPasswordField txtConfirmPW;
+    public JFXRadioButton rbStudent;
+    public JFXRadioButton rbTeacher;
 
     private void ReturnToLogin() throws IOException {
         Stage mainStage = (Stage)btnClose.getScene().getWindow();
