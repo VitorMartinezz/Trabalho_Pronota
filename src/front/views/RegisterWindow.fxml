@@ -36,12 +36,12 @@
             <JFXTextField fx:id="txtUsername" layoutX="161.0" layoutY="188.0" prefHeight="25.0" prefWidth="212.0" />
             <JFXPasswordField fx:id="txtPassword" layoutX="161.0" layoutY="244.0" prefHeight="25.0" prefWidth="212.0" />
             <JFXPasswordField fx:id="txtConfirmPW" layoutX="161.0" layoutY="301.0" prefHeight="25.0" prefWidth="212.0" />
-            <JFXRadioButton layoutX="161.0" layoutY="366.0" selected="true" style="-jfx-selected-color: #6d2aff;" text="Estudante">
+            <JFXRadioButton fx:id="rbStudent" layoutX="161.0" layoutY="366.0" selected="true" style="-jfx-selected-color: #6d2aff;" text="Estudante">
                <toggleGroup>
                   <ToggleGroup fx:id="ProfileGroup"/>
                </toggleGroup>
             </JFXRadioButton>
-            <JFXRadioButton layoutX="299.0" layoutY="366.0" style="-jfx-selected-color: #6d2aff;" text="Professor" toggleGroup="$ProfileGroup" />
+            <JFXRadioButton fx:id="rbTeacher" layoutX="299.0" layoutY="366.0" style="-jfx-selected-color: #6d2aff;" text="Professor" toggleGroup="$ProfileGroup" />
             <JFXButton fx:id="btnCreate" onMouseClicked="#btnCreate_Click" layoutX="146.0" layoutY="444.0" prefHeight="49.0" prefWidth="191.0" style="-fx-background-color: #6d2aff;" text="Criar" textFill="WHITE">
                <font>
                   <Font size="18.0" />

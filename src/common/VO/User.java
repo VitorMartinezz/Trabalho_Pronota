@@ -10,9 +10,10 @@ public class User extends model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Role role;
     private String username;
+    @Column(unique = true)
     private String email;
     private String password;
     private LocalDateTime createdAt;

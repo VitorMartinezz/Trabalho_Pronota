@@ -1,20 +1,30 @@
 package front.controllers;
 
 import business.UserBusiness;
+import com.jfoenix.validation.RequiredFieldValidator;
+import com.jfoenix.validation.base.ValidatorBase;
+import common.VO.Role;
+import common.VO.User;
+import de.jensd.fx.glyphs.GlyphsDude;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
+import front.services.validators.ConfirmPWValidator;
+import front.services.validators.EmailValidator;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
-import common.VO.User;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.List;
 
 public class RegisterController {
     public JFXButton btnClose;
@@ -25,6 +35,74 @@ public class RegisterController {
     public JFXPasswordField txtConfirmPW;
     public JFXRadioButton rbStudent;
     public JFXRadioButton rbTeacher;
+
+    public RegisterController() {
+    }
+
+    private void updateConfirmPWValidator() {
+        txtConfirmPW.getValidators().remove(0);
+
+        ConfirmPWValidator requiredFieldValidatorConfirmPW = new ConfirmPWValidator(txtPassword.getText(),"Senha não corresponde!");
+        requiredFieldValidatorConfirmPW.setIcon(GlyphsDude.createIcon(FontAwesomeIcons.WARNING));
+
+        txtConfirmPW.getValidators().add(requiredFieldValidatorConfirmPW);
+    }
+
+    private void validateAllFields() {
+        txtEmail.validate();
+        txtPassword.validate();
+        txtUsername.validate();
+        txtConfirmPW.validate();
+    }
+
+    private void createValidatorsForFields() {
+        EmailValidator emailValidator = new EmailValidator("E-mail inválido!");
+        emailValidator.setIcon(GlyphsDude.createIcon(FontAwesomeIcons.WARNING));
+
+        txtEmail.getValidators().add(emailValidator);
+        txtEmail.focusedProperty().addListener((o, oldVal, newVal) -> {
+            if (!newVal) {
+                txtEmail.validate();
+            }
+        });
+
+        RequiredFieldValidator requiredFieldValidatorUsername = new RequiredFieldValidator("Usuário inválido!");
+        requiredFieldValidatorUsername.setIcon(GlyphsDude.createIcon(FontAwesomeIcons.WARNING));
+
+        txtUsername.getValidators().add(requiredFieldValidatorUsername);
+        txtUsername.focusedProperty().addListener((o, oldVal, newVal) -> {
+            if (!newVal) {
+                txtUsername.validate();
+            }
+        });
+
+        RequiredFieldValidator requiredFieldValidatorPassword = new RequiredFieldValidator("Senha inválida!");
+        requiredFieldValidatorPassword.setIcon(GlyphsDude.createIcon(FontAwesomeIcons.WARNING));
+
+        txtPassword.getValidators().add(requiredFieldValidatorPassword);
+        txtPassword.focusedProperty().addListener((o, oldVal, newVal) -> {
+            if (!newVal) {
+                txtPassword.validate();
+            }
+        });
+
+        ConfirmPWValidator requiredFieldValidatorConfirmPW = new ConfirmPWValidator("","Senha não corresponde!");
+        requiredFieldValidatorConfirmPW.setIcon(GlyphsDude.createIcon(FontAwesomeIcons.WARNING));
+
+        txtConfirmPW.getValidators().add(requiredFieldValidatorConfirmPW);
+        txtConfirmPW.focusedProperty().addListener((o, oldVal, newVal) -> {
+            if (!newVal) {
+                updateConfirmPWValidator();
+                txtConfirmPW.validate();
+            }
+        });
+    }
+
+    @FXML
+    protected void initialize() {
+        //Add Validators for textfields
+        createValidatorsForFields();
+    }
 
     private void ReturnToLogin() throws IOException {
         Stage mainStage = (Stage)btnClose.getScene().getWindow();
@@ -44,15 +122,36 @@ public class RegisterController {
     }
 
     public void btnCreate_Click() throws IOException {
-        User newUser = new User();
-        newUser.setEmail(txtEmail.getText());
-        newUser.setUsername(txtUsername.getText());
-        newUser.setPassword(txtPassword.getText());
+        updateConfirmPWValidator();
+        validateAllFields();
 
-        UserBusiness UB = new UserBusiness();
-        UB.createUser(newUser);
+        if(!txtEmail.validate() || !txtPassword.validate() || !txtUsername.validate() || !txtConfirmPW.validate()) {
+            return;
+        } else {
+            User newUser = new User();
 
-        ReturnToLogin();
+            newUser.setEmail(txtEmail.getText());
+            newUser.setUsername(txtUsername.getText());
+            newUser.setPassword(txtPassword.getText());
+            newUser.setCreatedAt(LocalDateTime.now());
+            newUser.setRole(new Role());
+
+            int id = 1;
+            if(rbTeacher.isSelected()) {
+                id = 2;
+            }
+
+            newUser.getRole().setId(id);
+
+            UserBusiness UB = new UserBusiness();
+            boolean wasCreated = UB.createUser(newUser);
+
+            if(!wasCreated) {
+                //TODO - Add error screen
+            } else {
+                ReturnToLogin();
+            }
+        }
     }
 
 }

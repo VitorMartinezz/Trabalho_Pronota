@@ -10,7 +10,6 @@ import javax.persistence.Id;
 @Entity
 public class Role extends model {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String description;
 

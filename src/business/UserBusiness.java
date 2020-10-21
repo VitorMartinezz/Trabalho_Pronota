@@ -8,20 +8,26 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class UserBusiness {
-    public void createUser(User newUser) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("teste");
-        EntityManager em = emf.createEntityManager();
+    public boolean createUser(User newUser) {
+        try{
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("teste");
+            EntityManager em = emf.createEntityManager();
 
-        em.getTransaction().begin();
-        em.persist(newUser);
-        em.getTransaction().commit();
+            em.getTransaction().begin();
+            em.persist(newUser);
+            em.getTransaction().commit();
 
-        Runnable createLogRunnable = () -> {
-            LogUtil log = LogUtil.getLogsInstance();
+            Runnable createLogRunnable = () -> {
+                LogUtil log = LogUtil.getLogsInstance();
 
-            log.createLog(newUser, "Foi criado");
-        };
+                log.createLog(newUser, "Foi criado");
+            };
 
-        new Thread(createLogRunnable).start();
+            new Thread(createLogRunnable).start();
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
