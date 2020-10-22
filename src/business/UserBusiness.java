@@ -1,33 +1,28 @@
 package business;
 
-import common.Runtime.LogUtil;
+import DAO.UserMySQLDAO;
 import common.VO.User;
+import org.mindrot.jbcrypt.BCrypt;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 public class UserBusiness {
     public boolean createUser(User newUser) {
-        try{
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("teste");
-            EntityManager em = emf.createEntityManager();
+        String pw = newUser.getPassword();
+        String hash = BCrypt.hashpw(pw, BCrypt.gensalt());
+        newUser.setPassword(hash);
 
-            em.getTransaction().begin();
-            em.persist(newUser);
-            em.getTransaction().commit();
+        return UserMySQLDAO.insert(newUser);
+    }
 
-            Runnable createLogRunnable = () -> {
-                LogUtil log = LogUtil.getLogsInstance();
-
-                log.createLog(newUser, "Foi criado");
-            };
-
-            new Thread(createLogRunnable).start();
-
-            return true;
-        } catch (Exception e) {
-            return false;
+    public User login(String email, String password) {
+        User user = UserMySQLDAO.selectByEmail(email);
+        if(user == null) {
+            return null;
+        }
+        if(BCrypt.checkpw(password, user.getPassword())) {
+            return user;
+        } else {
+            return null;
         }
     }
 }

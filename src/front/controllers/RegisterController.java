@@ -117,8 +117,12 @@ public class RegisterController {
         primaryStage.show();
     }
 
-    public void btnClose_Click() throws IOException {
+    public void btnBack_Click() throws IOException {
         ReturnToLogin();
+    }
+
+    public void btnClose_Click() throws IOException {
+        System.exit(0);
     }
 
     public void btnCreate_Click() throws IOException {

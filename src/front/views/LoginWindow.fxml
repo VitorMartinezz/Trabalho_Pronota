@@ -9,13 +9,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
 <AnchorPane fx:id="apLogin" depthTest="DISABLE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="551.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.controllers.LoginController">
    <children>
       <BorderPane layoutX="56.0" layoutY="82.0" prefHeight="382.0" prefWidth="404.0" style="-fx-background-color: #6237a0;" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="72.0" />
       <AnchorPane layoutX="76.0" layoutY="57.0" prefHeight="392.0" prefWidth="400.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="57.0">
          <children>
-            <JFXTextField layoutX="100.0" layoutY="153.0" prefHeight="25.0" prefWidth="200.0" promptText="Email" />
-            <JFXTextField layoutX="100.0" layoutY="213.0" prefHeight="25.0" prefWidth="200.0" promptText="Senha" />
+            <JFXTextField fx:id="txtEmail" layoutX="100.0" layoutY="153.0" prefHeight="25.0" prefWidth="200.0" promptText="Email" />
+            <JFXPasswordField fx:id="txtPassword" layoutX="100.0" layoutY="213.0" prefHeight="25.0" prefWidth="200.0" promptText="Senha" />
             <JFXButton fx:id="btnLogin" layoutX="240.0" layoutY="313.0" onMouseClicked="#btnLogin_Click" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: #6d2aff;" text="Entrar" textFill="WHITE" />
             <JFXButton fx:id="btnRegister" onMouseClicked="#btnRegister_Click" layoutX="40.0" layoutY="313.0" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: #6d2aff;" text="Criar Conta" textFill="WHITE" />
             <JFXButton fx:id="btnClose" contentDisplay="CENTER" layoutX="360.0" layoutY="14.0" onMouseClicked="#btnClose_Click" prefHeight="25.0" prefWidth="25.0" ripplerFill="BLACK" style="-fx-background-color: #6d2aff;" text="X" textAlignment="CENTER" textFill="WHITE">

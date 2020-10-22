@@ -5,7 +5,7 @@ import common.generic.model;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name = "user")
 public class User extends model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
