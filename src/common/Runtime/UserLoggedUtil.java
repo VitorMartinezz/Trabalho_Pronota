@@ -15,4 +15,8 @@ public class UserLoggedUtil {
             user = loginUser;
         }
     }
+
+    public static void cleanSession() {
+        user = null;
+    }
 }

@@ -4,6 +4,8 @@ import business.UserBusiness;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import common.Runtime.BuildScreenUtil;
+import common.Runtime.UserLoggedUtil;
 import common.VO.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -34,16 +36,26 @@ public class LoginController {
         if (user != null) {
             Stage LoginStage = (Stage) btnLogin.getScene().getWindow();
             LoginStage.close();
-            Parent root = FXMLLoader.load(getClass().getResource("../views/MainWindow.fxml"));
-            Scene scene = new Scene(root);
-            scene.setFill(Color.TRANSPARENT);
-            Stage primaryStage = new Stage();
-            primaryStage.setTitle("Inicio");
-            primaryStage.setScene(scene);
-            primaryStage.initStyle(StageStyle.TRANSPARENT);
-            primaryStage.show();
-        } else {
 
+            UserLoggedUtil.setSession(user);
+
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            Parent root = fxmlLoader.load(getClass().getResource("../views/MainWindow.fxml"));
+
+            BuildScreenUtil.createScreen(root, "Inicio");
+        } else {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../views/dialogs/MessageDialogWindow.fxml"));
+            Parent root = fxmlLoader.load();
+
+            MessageDialogController controller = fxmlLoader.getController();
+            controller.txtMessage.setText("E-mail ou senha inválidos");
+            controller.txtHeader.setText("Erro no login");
+
+            try{
+                BuildScreenUtil.createScreen(root, "Error");
+            } catch (Exception e) {
+                System.out.println("");
+            }
         }
     }
 
@@ -51,12 +63,6 @@ public class LoginController {
         Stage LoginStage = (Stage) btnLogin.getScene().getWindow();
         LoginStage.close();
         Parent root = FXMLLoader.load(getClass().getResource("../views/RegisterWindow.fxml"));
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
-        Stage primaryStage = new Stage();
-        primaryStage.setTitle("Cadastro");
-        primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
-        primaryStage.show();
+        BuildScreenUtil.createScreen(root, "Cadastro");
     }
 }

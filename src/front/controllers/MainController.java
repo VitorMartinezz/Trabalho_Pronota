@@ -1,6 +1,8 @@
 package front.controllers;
 
 import com.jfoenix.controls.JFXButton;
+import common.Runtime.BuildScreenUtil;
+import common.Runtime.UserLoggedUtil;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,19 +26,18 @@ public class MainController {
         Stage mainStage = (Stage)btnClose.getScene().getWindow();
         mainStage.close();
         Parent root = FXMLLoader.load(getClass().getResource("../views/LoginWindow.fxml"));
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
-        Stage primaryStage = new Stage();
-        primaryStage.setTitle("Inicio");
-        primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
-        primaryStage.show();
+        UserLoggedUtil.cleanSession();
+        BuildScreenUtil.createScreen(root, "Login");
     }
+
     private void SwitchView(String ViewName) throws IOException {
-        AnchorPane ap = FXMLLoader.load(getClass().getResource(ViewName));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(ViewName));
+        AnchorPane ap = fxmlLoader.load();
+
         apViewer.getChildren().removeAll();
         apViewer.getChildren().setAll(ap);
     }
+
     public void btnHome_Click() throws IOException {
         SwitchView("../views/HomeView.fxml");
     }
