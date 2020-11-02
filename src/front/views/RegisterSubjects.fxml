@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="245.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="441.0" minHeight="10.0" prefHeight="441.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6237a0;">
+               <children>
+                  <Text fill="WHITE" layoutX="302.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleção de matérias">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="750.0" layoutY="11.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #6d2aff; -fx-background-radius: 15;" text=" " textAlignment="CENTER">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.75em" wrappingWidth="16.888889030173974" />
+                     </graphic>
+                  </JFXButton>
+                  <FontAwesomeIcon fill="WHITE" glyphName="BOOK" layoutX="270.0" layoutY="38.0" size="2em" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e8deff;" GridPane.rowIndex="1">
+               <children>
+                  <AnchorPane layoutX="13.0" layoutY="39.0" prefHeight="390.0" prefWidth="773.0" style="-fx-background-color: #B19CD9; -fx-background-radius: 15;">
+                     <children>
+                        <AnchorPane layoutX="20.0" layoutY="-36.0" prefHeight="72.0" prefWidth="206.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
+                           <children>
+                              <Text fill="WHITE" layoutX="54.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matérias" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <JFXButton layoutX="666.0" layoutY="344.0" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #6d2aff;" text="SALVAR" textFill="WHITE" />
+                        <AnchorPane layoutX="20.0" layoutY="61.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
+                           <children>
+                              <Text fill="WHITE" layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1º">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <JFXComboBox layoutX="71.0" layoutY="27.0" prefHeight="25.0" prefWidth="135.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="277.0" layoutY="61.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
+                           <children>
+                              <Text fill="WHITE" layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2º">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <JFXComboBox layoutX="71.0" layoutY="29.0" prefHeight="25.0" prefWidth="135.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="527.0" layoutY="61.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
+                           <children>
+                              <Text fill="WHITE" layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3º">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <JFXComboBox layoutX="71.0" layoutY="27.0" prefHeight="25.0" prefWidth="135.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="20.0" layoutY="195.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
+                           <children>
+                              <Text fill="WHITE" layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4º">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <JFXComboBox layoutX="71.0" layoutY="27.0" prefHeight="25.0" prefWidth="135.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="277.0" layoutY="195.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
+                           <children>
+                              <Text fill="WHITE" layoutX="11.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5º">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <JFXComboBox layoutX="71.0" layoutY="26.0" prefHeight="25.0" prefWidth="135.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="527.0" layoutY="195.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
+                           <children>
+                              <Text fill="WHITE" layoutX="11.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6º">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <JFXComboBox layoutX="71.0" layoutY="26.0" prefHeight="25.0" prefWidth="135.0" />
+                           </children>
+                        </AnchorPane>
+                        <JFXButton layoutX="556.0" layoutY="344.0" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #FF0000;" text="Limpar Campos" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

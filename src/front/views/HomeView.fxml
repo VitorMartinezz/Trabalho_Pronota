@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.controllers.HomeViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.controllers.HomeViewController">
    <children>
       <GridPane layoutX="-2.0" layoutY="-1.0" prefHeight="651.0" prefWidth="1095.0" style="-fx-background-color: #e8deff;">
          <columnConstraints>
@@ -26,7 +26,7 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <BorderPane layoutX="9.0" layoutY="11.0" prefHeight="94.0" prefWidth="1081.0" style="-fx-background-color: #6237a0; -fx-background-insets: 0; -fx-background-radius: 25;">
+                  <BorderPane layoutX="16.0" layoutY="11.0" prefHeight="94.0" prefWidth="1067.0" style="-fx-background-color: #6237a0; -fx-background-insets: 0; -fx-background-radius: 25;">
                      <left>
                         <Text fx:id="lblWelCome" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="       Bem Vindo, Amigão." textAlignment="CENTER" BorderPane.alignment="CENTER">
                            <font>
@@ -39,7 +39,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="431.0" GridPane.rowIndex="1">
                <children>
-                  <BorderPane layoutX="13.0" layoutY="10.0" prefHeight="449.0" prefWidth="520.0" style="-fx-background-radius: 25; -fx-background-color: #B19CD9;">
+                  <BorderPane layoutX="16.0" layoutY="10.0" prefHeight="449.0" prefWidth="520.0" style="-fx-background-radius: 25; -fx-background-color: #B19CD9;">
                      <top>
                         <BorderPane prefHeight="67.0" prefWidth="365.0" style="-fx-background-color: #6237a0; -fx-background-insets: 0; -fx-background-radius: 25;" BorderPane.alignment="CENTER">
                            <center>
@@ -69,7 +69,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="446.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <BorderPane layoutX="7.0" layoutY="9.0" prefHeight="449.0" prefWidth="530.0" style="-fx-background-radius: 25; -fx-background-color: #B19CD9;">
+                  <BorderPane layoutX="7.0" layoutY="9.0" prefHeight="449.0" prefWidth="512.0" style="-fx-background-radius: 25; -fx-background-color: #B19CD9;">
                      <top>
                         <BorderPane prefHeight="67.0" prefWidth="443.0" style="-fx-background-color: #6237a0; -fx-background-insets: 0; -fx-background-radius: 25;" BorderPane.alignment="CENTER">
                            <center>

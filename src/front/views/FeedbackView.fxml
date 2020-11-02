@@ -8,174 +8,179 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane prefHeight="651.0" prefWidth="1095.0" style="-fx-background-color: #e8deff;">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="321.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="540.0" minHeight="10.0" prefHeight="540.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="410.0" minHeight="0.0" prefHeight="113.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="589.0" minHeight="10.0" prefHeight="538.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="543.0" minWidth="10.0" prefWidth="391.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="732.0" minWidth="10.0" prefWidth="704.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="17.0" layoutY="112.0" prefHeight="113.0" prefWidth="1066.0" style="-fx-background-color: #B19CD9; -fx-background-radius: 25;" />
+                        <BorderPane layoutX="37.0" layoutY="65.0" prefHeight="94.0" prefWidth="358.0" style="-fx-background-color: #6237a0; -fx-background-insets: 0; -fx-background-radius: 25;">
+                           <center>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="FeedBack" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Text>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <BorderPane layoutX="18.0" layoutY="-1.0" prefHeight="521.0" prefWidth="1058.0" style="-fx-background-color: #B19CD9; -fx-background-radius: 25;">
+                  <BorderPane layoutX="17.0" layoutY="14.0" prefHeight="510.0" prefWidth="1066.0" style="-fx-background-color: #B19CD9; -fx-background-radius: 25;">
                      <center>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <children>
-                              <BorderPane layoutX="150.0" layoutY="49.0" prefHeight="456.0" prefWidth="759.0" style="-fx-background-color: #6237a0; -fx-background-radius: 25;">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                              <AnchorPane layoutX="154.0" layoutY="4.0" prefHeight="465.0" prefWidth="758.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
+                                 <children>
+                                    <GridPane layoutX="11.0" layoutY="9.0" prefHeight="472.0" prefWidth="715.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
                                        <children>
-                                          <GridPane layoutX="39.0" layoutY="38.0" prefHeight="390.0" prefWidth="682.0">
-                                            <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                            </columnConstraints>
-                                            <rowConstraints>
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                            </rowConstraints>
-                                             <children>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Comprometimento com a rotina" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Alcance da média" wrappingWidth="340.25390625" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Alcance da meta" wrappingWidth="338.8671875" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Método favorito" wrappingWidth="338.671875" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Maior facilidade" wrappingWidth="338.828125" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Maior dificuldade" wrappingWidth="339.33203125" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="60%" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="90%" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="70%" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Exercícios" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Cálculo" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                                   <center>
-                                                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Física IV" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="24.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </center>
-                                                </BorderPane>
-                                             </children>
-                                          </GridPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Comprometimento com a rotina" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Alcance da média" wrappingWidth="340.25390625" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Alcance da meta" wrappingWidth="338.8671875" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Método favorito" wrappingWidth="338.671875" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Maior facilidade" wrappingWidth="338.828125" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Maior dificuldade" wrappingWidth="339.33203125" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="60%" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="90%" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="70%" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Exercícios" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Cálculo" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <center>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Física IV" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </center>
+                                          </BorderPane>
                                        </children>
-                                    </AnchorPane>
-                                 </center>
-                              </BorderPane>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
-                     </center>
-                  </BorderPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <BorderPane layoutX="18.0" layoutY="77.0" prefHeight="79.0" prefWidth="216.0" style="-fx-background-color: #B19CD9;" />
-                  <BorderPane layoutX="18.0" layoutY="40.0" prefHeight="116.0" prefWidth="396.0" style="-fx-background-color: #6237a0; -fx-background-radius: 25;">
-                     <center>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback" BorderPane.alignment="CENTER">
-                           <font>
-                              <Font size="48.0" />
-                           </font>
-                        </Text>
-                     </center>
-                  </BorderPane>
+                     </center></BorderPane>
                </children>
             </AnchorPane>
          </children>
