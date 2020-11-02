@@ -3,6 +3,7 @@ package front.controllers;
 import com.jfoenix.controls.JFXButton;
 import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,6 +21,11 @@ public class MainController {
     public JFXButton btnStudy;
     public JFXButton btnCalender;
     public JFXButton btnFeedback;
+
+    @FXML
+    protected void initialize() throws IOException {
+        SwitchView("../views/HomeView.fxml");
+    }
 
     public void btnClose_Click() throws IOException {
 
