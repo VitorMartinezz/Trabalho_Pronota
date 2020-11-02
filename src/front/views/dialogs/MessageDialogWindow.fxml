@@ -7,9 +7,13 @@
 <?import javafx.scene.text.Text?>
 
 
+<?import javafx.scene.effect.DropShadow?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.controllers.MessageDialogController" style="-fx-background-color: transparent;">
    <children>
-      <AnchorPane layoutX="110.0" layoutY="115.0" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #6237a0;" />
+      <AnchorPane layoutX="110.0" layoutY="115.0" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #6237a0;" >
+         <effect>
+            <DropShadow />
+         </effect></AnchorPane>
       <AnchorPane layoutX="125.0" layoutY="100.0" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: White;">
          <children>
             <FontAwesomeIcon glyphName="WARNING" layoutX="14.0" layoutY="121.0" size="50" wrappingWidth="55.0" />
@@ -26,6 +30,9 @@
             </Text>
             <JFXButton fx:id="btnClose" layoutX="317.0" layoutY="14.0" minHeight="25.0" onAction="#btnClose_Click" prefWidth="25.0" style="-fx-background-color: #6d2aff;" text="X" textFill="WHITE" />
          </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </AnchorPane>
    </children>
 </AnchorPane>

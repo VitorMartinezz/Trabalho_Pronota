@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,18 +16,22 @@
       <AnchorPane layoutX="48.0" layoutY="24.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="24.0">
          <children>
             <GridPane prefHeight="720.0" prefWidth="1280.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1082.0" minWidth="0.0" prefWidth="185.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1280.0" minWidth="10.0" prefWidth="1095.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="359.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="665.0" minHeight="10.0" prefHeight="650.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1082.0" minWidth="0.0" prefWidth="185.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1280.0" minWidth="10.0" prefWidth="1095.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="359.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="665.0" minHeight="10.0" prefHeight="650.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6237a0;" GridPane.columnIndex="1">
                      <children>
-                        <JFXButton fx:id="btnClose" onMouseClicked="#btnClose_Click" layoutX="1040.0" layoutY="13.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #6d2aff;" text="X" textFill="WHITE" />
+                        <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#btnClose_Click" layoutX="1040.0" layoutY="13.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #6d2aff; -fx-background-radius: 15;" text=" " textFill="WHITE" >
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" layoutX="1053.0" layoutY="44.0" size="2em"/>
+                           </graphic>
+                     </JFXButton>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="650.0" prefWidth="165.0" style="-fx-background-color: #6237a0;" GridPane.rowIndex="1">
@@ -41,26 +46,32 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="btnStudy" onMouseClicked="#btnStudy_Click" layoutY="142.0" prefHeight="70.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="ESTUDOS" textAlignment="CENTER" textFill="WHITE">
+                        <JFXButton fx:id="btnStudy" onMouseClicked="#btnStudy_Click" alignment="CENTER" contentDisplay="CENTER" layoutY="142.0" prefHeight="70.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="ESTUDOS" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="btnCalender" onMouseClicked="#btnCalender_Click" layoutX="-2.0" layoutY="212.0" prefHeight="70.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="CALENDÁRIO" textAlignment="CENTER" textFill="WHITE">
+                        <JFXButton fx:id="btnCalender" onMouseClicked="#btnCalender_Click" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="212.0" prefHeight="70.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="CALENDÁRIO" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="btnFeedback" onMouseClicked="#btnFeedback_Click" layoutY="282.0" prefHeight="70.0" prefWidth="185.0" style="-fx-background-color: transparent;" text="FEEDBACK" textAlignment="CENTER" textFill="WHITE">
+                        <JFXButton fx:id="btnFeedback" onMouseClicked="#btnFeedback_Click" alignment="CENTER" contentDisplay="CENTER" layoutY="282.0" prefHeight="70.0" prefWidth="185.0" style="-fx-background-color: transparent;" text="FEEDBACK" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="btnClose2" onMouseClicked="#btnClose_Click" layoutY="579.0" prefHeight="70.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="SAIR" textFill="WHITE">
+                        <JFXButton fx:id="btnClose2" onMouseClicked="#btnClose_Click" alignment="CENTER" contentDisplay="CENTER" layoutY="579.0" prefHeight="70.0" prefWidth="184.0" text="SAIR" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
+                        <FontAwesomeIcon fill="WHITE" glyphName="HOME" layoutX="8.0" layoutY="47.0" size="2.5em" wrappingWidth="28.000032365322113" />
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS" layoutX="11.0" layoutY="117.0" size="2.5em" />
+                        <FontAwesomeIcon fill="WHITE" glyphName="BOOK" layoutX="9.0" layoutY="187.0" size="2.5em" />
+                        <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" layoutX="9.0" layoutY="257.0" size="2.5em" />
+                        <FontAwesomeIcon fill="WHITE" glyphName="STAR" layoutX="9.0" layoutY="327.0" size="2.5em" />
+                        <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" layoutX="13.0" layoutY="624.0" size="2.5em" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6237a0;">
