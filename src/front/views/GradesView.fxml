@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.controllers.GradesViewController">
     <children>
         <GridPane prefHeight="651.0" prefWidth="1095.0" style="-fx-background-color: #e8deff;">
             <columnConstraints>
@@ -55,9 +55,9 @@
                                         <JFXComboBox focusColor="#405aa8" prefHeight="47.0" prefWidth="190.0" unFocusColor="#b19cd9" BorderPane.alignment="CENTER" />
                                     </center>
                                 </BorderPane>
-                                <JFXButton layoutX="931.0" layoutY="61.0" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #6237a0;" text="Cadastrar Notas" textFill="WHITE" />
-                                <JFXButton layoutX="800.0" layoutY="61.0" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #6237a0;" text="Cadastrar Matérias" textFill="WHITE" />
-                                <JFXButton layoutX="668.0" layoutY="61.0" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #6237a0;" text="Criar Matéria" textFill="WHITE" />
+                                <JFXButton fx:id="btnRegisterGrades" onMouseClicked="#btnRegisterGrades_Click"  layoutX="931.0" layoutY="61.0" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #6237a0;" text="Cadastrar Notas" textFill="WHITE" />
+                                <JFXButton fx:id="btnRegisterSubjects" onMouseClicked="#btnRegisterSubjects_Click" layoutX="800.0" layoutY="61.0" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #6237a0;" text="Cadastrar Matérias" textFill="WHITE" />
+                                <JFXButton fx:id="btnCreateSubject" onMouseClicked="#btnCreateSubject_Click" layoutX="668.0" layoutY="61.0" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #6237a0;" text="Criar Matéria" textFill="WHITE" />
                             </children>
                         </AnchorPane>
                     </children>
