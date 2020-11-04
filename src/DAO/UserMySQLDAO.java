@@ -34,7 +34,7 @@ public class UserMySQLDAO {
         try {
             EntityManager em = SessionUtil.getSession();
 
-            Query query = em.createQuery("from user where email =:email ")
+            Query query = em.createQuery("from tbUsers where email =:email ")
                     .setParameter("email", email);
             User user = (User) query.getSingleResult();
             return user;

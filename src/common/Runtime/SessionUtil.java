@@ -9,7 +9,7 @@ public class SessionUtil {
 
     public static EntityManager getSession() {
         if(entityManager == null) {
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("teste");
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("pronotaDB");
             entityManager = emf.createEntityManager();
         }
 
