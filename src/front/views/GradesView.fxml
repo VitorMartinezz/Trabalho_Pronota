@@ -52,7 +52,7 @@
                                         </Text>
                                     </left>
                                     <center>
-                                        <JFXComboBox focusColor="#405aa8" prefHeight="47.0" prefWidth="190.0" unFocusColor="#b19cd9" BorderPane.alignment="CENTER" />
+                                        <JFXComboBox fx:id="cbSubjects" focusColor="#405aa8" prefHeight="47.0" prefWidth="190.0" unFocusColor="#b19cd9" BorderPane.alignment="CENTER" />
                                     </center>
                                 </BorderPane>
                                 <JFXButton fx:id="btnRegisterGrades" onMouseClicked="#btnRegisterGrades_Click"  layoutX="931.0" layoutY="61.0" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #6237a0;" text="Cadastrar Notas" textFill="WHITE" />
@@ -97,7 +97,7 @@
                                                         </Text>
                                                     </top>
                                                     <center>
-                                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="7.6" textAlignment="CENTER" wrappingWidth="223.15625" BorderPane.alignment="CENTER">
+                                                        <Text fx:id="lbLastGrade" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="7.6" textAlignment="CENTER" wrappingWidth="223.15625" BorderPane.alignment="CENTER">
                                                             <font>
                                                                 <Font size="64.0" />
                                                             </font>
@@ -117,7 +117,7 @@
                                                         </Text>
                                                     </top>
                                                     <center>
-                                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="4.5" textAlignment="CENTER" wrappingWidth="227.875" BorderPane.alignment="CENTER">
+                                                        <Text fx:id="lbFinalAverage" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="4.5" textAlignment="CENTER" wrappingWidth="227.875" BorderPane.alignment="CENTER">
                                                             <font>
                                                                 <Font size="64.0" />
                                                             </font>
@@ -137,7 +137,7 @@
                                                         </Text>
                                                     </top>
                                                     <center>
-                                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER" wrappingWidth="224.5" BorderPane.alignment="CENTER">
+                                                        <Text fx:id="lbMinimumRequired" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER" wrappingWidth="224.5" BorderPane.alignment="CENTER">
                                                             <font>
                                                                 <Font size="64.0" />
                                                             </font>
@@ -157,7 +157,7 @@
                                                         </Text>
                                                     </top>
                                                     <center>
-                                                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="223.6875" BorderPane.alignment="CENTER">
+                                                        <Text fx:id="lbNeedToPass" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="223.6875" BorderPane.alignment="CENTER">
                                                             <font>
                                                                 <Font size="64.0" />
                                                             </font>
