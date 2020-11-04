@@ -1,0 +1,9 @@
+.jfx-combo-box {
+    -fx-prompt-text-fill: black;
+}
+
+.jfx-combo-box .cell {
+    -fx-background: #6237a0;
+    -fx-background-color: #6237a0;
+    -fx-text-fill: white;
+}
