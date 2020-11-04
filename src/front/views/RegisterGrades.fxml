@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.controllers.RegisterGradesController">
    <children>
       <GridPane prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -31,7 +31,7 @@
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="750.0" layoutY="11.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #6d2aff; -fx-background-radius: 15;" text=" " textAlignment="CENTER">
+                  <JFXButton fx:id="btnClose" onMouseClicked="#btnClose_Click" alignment="CENTER" contentDisplay="CENTER" layoutX="750.0" layoutY="11.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #6d2aff; -fx-background-radius: 15;" text=" " textAlignment="CENTER">
                      <graphic>
                         <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.75em" wrappingWidth="16.888889030173974" />
                      </graphic>
