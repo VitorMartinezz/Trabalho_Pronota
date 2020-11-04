@@ -32,11 +32,6 @@ public class CreateSubjectController {
         cbArea.setItems(options);
     }
 
-    @FXML
-    private void handleComboBoxFormat() {
-        this.cbArea.getEditor().setStyle("-fx-text-fill: #eceff1;" + "-fx-background-color: #445566");
-    }
-
     public void btnClose_Click() {
         Stage stage = (Stage) btnClose.getScene().getWindow();
         stage.close();
