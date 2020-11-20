@@ -58,7 +58,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXComboBox fx:id="cbSubject1" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="27.0" prefHeight="25.0" prefWidth="135.0" />
+                              <JFXComboBox fx:id="cbSubject1" stylesheets="@css/createSubject.css" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="27.0" prefHeight="25.0" prefWidth="135.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="277.0" layoutY="61.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
@@ -68,7 +68,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXComboBox fx:id="cbSubject2" focusColor="#b19cd9" unFocusColor="#b19cd9"  layoutX="71.0" layoutY="29.0" prefHeight="25.0" prefWidth="135.0" />
+                              <JFXComboBox fx:id="cbSubject2" stylesheets="@css/createSubject.css" focusColor="#b19cd9" unFocusColor="#b19cd9"  layoutX="71.0" layoutY="29.0" prefHeight="25.0" prefWidth="135.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="527.0" layoutY="61.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
@@ -78,7 +78,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXComboBox fx:id="cbSubject3" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="27.0" prefHeight="25.0" prefWidth="135.0" />
+                              <JFXComboBox fx:id="cbSubject3" stylesheets="@css/createSubject.css" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="27.0" prefHeight="25.0" prefWidth="135.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="20.0" layoutY="195.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
@@ -88,7 +88,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXComboBox fx:id="cbSubject4" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="27.0" prefHeight="25.0" prefWidth="135.0" />
+                              <JFXComboBox fx:id="cbSubject4" stylesheets="@css/createSubject.css" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="27.0" prefHeight="25.0" prefWidth="135.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="277.0" layoutY="195.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
@@ -98,7 +98,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXComboBox fx:id="cbSubject5" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="26.0" prefHeight="25.0" prefWidth="135.0" />
+                              <JFXComboBox fx:id="cbSubject5" stylesheets="@css/createSubject.css" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="26.0" prefHeight="25.0" prefWidth="135.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="527.0" layoutY="195.0" prefHeight="78.0" prefWidth="220.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
@@ -108,7 +108,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXComboBox fx:id="cbSubject6" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="26.0" prefHeight="25.0" prefWidth="135.0" />
+                              <JFXComboBox fx:id="cbSubject6" stylesheets="@css/createSubject.css" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="26.0" prefHeight="25.0" prefWidth="135.0" />
                            </children>
                         </AnchorPane>
                         <JFXButton layoutX="556.0" layoutY="344.0" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #FF0000;" text="Limpar Campos" textFill="WHITE" />

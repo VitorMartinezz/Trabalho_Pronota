@@ -47,4 +47,9 @@ public class Subject extends model {
     public void setArea(Area area) {
         this.area = area;
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

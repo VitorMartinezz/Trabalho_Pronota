@@ -1,22 +1,21 @@
 package DAO;
 
 import common.Runtime.SessionUtil;
+import common.VO.GradesUserSubject;
 import common.VO.Subject;
-import common.VO.User;
-import common.VO.UserSubject;
 import org.hibernate.Session;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
 
-public class UserSubjectMySQLDAO {
-    public static boolean insert(UserSubject newUserSubject) {
+public class GradeMySQLDAO {
+    public static boolean insert(GradesUserSubject newGradesUserSubject) {
         try {
             EntityManager em = SessionUtil.getSession();
 
             em.getTransaction().begin();
-            em.persist(newUserSubject);
+            em.persist(newGradesUserSubject);
             em.getTransaction().commit();
 
             return true;
@@ -25,13 +24,12 @@ public class UserSubjectMySQLDAO {
         }
     }
 
-    public static List<UserSubject> getUserSubject(User user) {
+    public static List<Subject> getSubjects() {
         try {
             EntityManager em = SessionUtil.getSession();
 
-            Query query = em.createQuery("from tbUserSubjects where user_id = :userId")
-                    .setParameter("userId", user.getId());
-            List<UserSubject> subjects = (List<UserSubject>) query.getResultList();
+            Query query = em.createQuery("from tbSubjects");
+            List<Subject> subjects = (List<Subject>) query.getResultList();
 
             return subjects;
         } catch (Exception e) {
@@ -43,7 +41,7 @@ public class UserSubjectMySQLDAO {
         try {
             EntityManager em = SessionUtil.getSession();
 
-            Query query = em.createQuery("from tbUserSubjects where id = :id")
+            Query query = em.createQuery("from tbSubjects where id = :id")
                     .setParameter("id", id);
             Subject subject = (Subject) query.getResultList();
 
@@ -53,12 +51,12 @@ public class UserSubjectMySQLDAO {
         }
     }
 
-    public static boolean editSubject(UserSubject userSubject) {
+    public static boolean editSubject(Subject subject) {
         try {
             EntityManager em = SessionUtil.getSession();
             Session session = em.unwrap(Session.class);
             em.getTransaction().begin();
-            session.update(userSubject);
+            session.update(subject);
             em.getTransaction().commit();
 
             return true;
@@ -67,13 +65,13 @@ public class UserSubjectMySQLDAO {
         }
     }
 
-    public static boolean deleteSubject(UserSubject userSubject) {
+    public static boolean deleteSubject(Subject subject) {
         try {
             EntityManager em = SessionUtil.getSession();
             Session session = em.unwrap(Session.class);
 
             em.getTransaction().begin();
-            session.delete(userSubject);
+            session.delete(subject);
             em.getTransaction().commit();
 
             return true;

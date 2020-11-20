@@ -58,5 +58,8 @@ public class CreateSubjectController {
         SubjectBusiness sb = new SubjectBusiness();
 
         sb.createSubject(subject);
+
+        Stage LoginStage = (Stage) btnClose.getScene().getWindow();
+        LoginStage.close();
     }
 }
