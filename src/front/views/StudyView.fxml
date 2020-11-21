@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.controllers.StudyViewController">
     <children>
         <GridPane prefHeight="651.0" prefWidth="1095.0" style="-fx-background-color: #e8deff;">
             <columnConstraints>
@@ -55,7 +55,7 @@
                                         <JFXComboBox focusColor="#405aa8" prefHeight="47.0" prefWidth="190.0" unFocusColor="#b19cd9" BorderPane.alignment="CENTER" />
                                     </center>
                                 </BorderPane>
-                                <JFXButton layoutX="927.0" layoutY="61.0" prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: #6237a0;" text="Cadastrar Conteúdo" textFill="WHITE" />
+                                <JFXButton fx:id="btnRegisterContent" onMouseClicked="#btnRegisterContent_Click" layoutX="927.0" layoutY="61.0" prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: #6237a0;" text="Cadastrar Conteúdo" textFill="WHITE" />
                             </children>
                         </AnchorPane>
                     </children>
