@@ -50,10 +50,10 @@
                                     <Font size="18.0" />
                                  </font>
                               </Text>
-                              <JFXComboBox fx:id="cbSubjects" focusColor="#6d2aff" layoutX="89.0" layoutY="21.0" prefHeight="25.0" prefWidth="103.0" unFocusColor="#e8deff" />
+                              <JFXComboBox fx:id="cbSubjects" onAction="#cbSubjects_Changed" focusColor="#6d2aff" layoutX="89.0" layoutY="21.0" prefHeight="25.0" prefWidth="103.0" unFocusColor="#e8deff" />
                            </children>
                         </AnchorPane>
-                        <JFXButton layoutX="666.0" layoutY="206.0" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #6d2aff;" text="SALVAR" textFill="WHITE" />
+                        <JFXButton fx:id="btnSave" onMouseClicked="#btnSave_Click" layoutX="666.0" layoutY="206.0" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #6d2aff;" text="SALVAR" textFill="WHITE" />
                         <BorderPane layoutX="14.0" layoutY="54.0" prefHeight="127.0" prefWidth="164.0" style="-fx-background-color: #6237a0; -fx-background-radius: 25;">
                            <top>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="1º N1" textAlignment="CENTER" wrappingWidth="120.900390625" BorderPane.alignment="CENTER">
@@ -134,7 +134,7 @@
                               </AnchorPane>
                            </center>
                         </BorderPane>
-                        <JFXButton layoutX="558.0" layoutY="206.0" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #FF0000;" text="Limpar Campos" textFill="WHITE" />
+                        <JFXButton fx:id="btnClearFields" onMouseClicked="#btnClearFields_Click" layoutX="558.0" layoutY="206.0" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #FF0000;" text="Limpar Campos" textFill="WHITE" />
                      </children>
                   </AnchorPane>
                   <Text layoutX="48.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avaliação Formativa">

@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity(name = "tbGradeTypes")
 public class GradeTypes {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

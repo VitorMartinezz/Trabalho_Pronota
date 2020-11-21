@@ -3,6 +3,7 @@ package DAO;
 import common.Runtime.SessionUtil;
 import common.VO.GradesUserSubject;
 import common.VO.Subject;
+import common.VO.UserSubject;
 import org.hibernate.Session;
 
 import javax.persistence.EntityManager;
@@ -15,7 +16,7 @@ public class GradeMySQLDAO {
             EntityManager em = SessionUtil.getSession();
 
             em.getTransaction().begin();
-            em.persist(newGradesUserSubject);
+            em.merge(newGradesUserSubject);
             em.getTransaction().commit();
 
             return true;
@@ -24,14 +25,29 @@ public class GradeMySQLDAO {
         }
     }
 
-    public static List<Subject> getSubjects() {
+    public static List<GradesUserSubject> getGrades(UserSubject user) {
         try {
             EntityManager em = SessionUtil.getSession();
 
-            Query query = em.createQuery("from tbSubjects");
-            List<Subject> subjects = (List<Subject>) query.getResultList();
+            Query query = em.createQuery("from tbGradesUserSubject where userSubject_id = :user").setParameter("user", user.getId());;
+            List<GradesUserSubject> subjects = (List<GradesUserSubject>) query.getResultList();
 
             return subjects;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static GradesUserSubject getAfGrades(UserSubject user) {
+        try {
+            EntityManager em = SessionUtil.getSession();
+
+            Query query = em.createQuery("from tbGradesUserSubject where userSubject_id = :user and gradeTypes_id = :type")
+                    .setParameter("user", user.getId())
+                    .setParameter("type", 3);;
+            GradesUserSubject grade = (GradesUserSubject) query.getSingleResult();
+
+            return grade;
         } catch (Exception e) {
             return null;
         }

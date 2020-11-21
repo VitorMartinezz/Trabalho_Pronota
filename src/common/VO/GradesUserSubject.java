@@ -69,4 +69,12 @@ public class GradesUserSubject {
     public void setPeriode(int periode) {
         this.periode = periode;
     }
+
+    public Structure getStructure() {
+        return structure;
+    }
+
+    public void setStructure(Structure structure) {
+        this.structure = structure;
+    }
 }
