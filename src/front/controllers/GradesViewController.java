@@ -93,6 +93,9 @@ public class GradesViewController {
                 new PropertyValueFactory<>("MF"));
 
         table.setItems(gradeList());
+        if(!us.isEmpty()){
+            cbSubjects_Changed();
+        }
     }
 
     private ObservableList<GradesTableViewModel> gradeList() {
@@ -133,12 +136,8 @@ public class GradesViewController {
             gradesTableViewModelList.add(new GradesTableViewModel(id, false, subject, n11, n21, n12, n22, AF));
         }
         return gradesTableViewModelList;
-    }
-        if(!us.isEmpty()){
-            cbSubjects_Changed();
-        }
 
-    }
+}
 
     @FXML
     private void cbSubjects_Changed(){
