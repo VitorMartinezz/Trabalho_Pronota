@@ -20,4 +20,5 @@ public class GradesBusiness {
     public GradesUserSubject getAf(UserSubject user){
         return GradeMySQLDAO.getAfGrades(user);
     }
+
 }

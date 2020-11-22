@@ -54,7 +54,7 @@
                      <center>
                         <AnchorPane prefHeight="200.0" prefWidth="434.0" BorderPane.alignment="CENTER">
                            <children>
-                              <BarChart layoutX="5.0" layoutY="-1.0" prefHeight="378.0" prefWidth="509.0" title="Notas">
+                              <BarChart fx:id="bcGrades" layoutX="5.0" layoutY="-1.0" prefHeight="378.0" prefWidth="509.0" title="Notas">
                                  <xAxis>
                                     <CategoryAxis side="BOTTOM" />
                                  </xAxis>

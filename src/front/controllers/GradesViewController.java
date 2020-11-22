@@ -47,7 +47,10 @@ public class GradesViewController {
         ObservableList<UserSubject> options = FXCollections.observableArrayList(us);
         cbSubjects.setItems(options);
         cbSubjects.getSelectionModel().selectFirst();
-        cbSubjects_Changed();
+        if(!us.isEmpty()){
+            cbSubjects_Changed();
+        }
+
     }
 
     @FXML
