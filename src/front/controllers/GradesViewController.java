@@ -33,7 +33,7 @@ public class GradesViewController {
     public Text lbNeedToPass;
     private float n1 = 0;
     private float n2 = 0;
-    private float n21 = 0;
+    private float n12 = 0;
     private float n22 = 0;
     private float af = 0;
 
@@ -51,6 +51,7 @@ public class GradesViewController {
 
     @FXML
     private void cbSubjects_Changed(){
+        ClearFields();
         UserSubject userSubject = (UserSubject) cbSubjects.getSelectionModel().getSelectedItem();
         GradesBusiness gradesBusiness = new GradesBusiness();
         List<GradesUserSubject> grades = gradesBusiness.getAll(userSubject);
@@ -60,6 +61,11 @@ public class GradesViewController {
     }
 
     private void ClearFields(){
+        n1 = 0;
+        n2 = 0;
+        n12 = 0;
+        n22 = 0;
+        af = 0;
         lbNeedToPass.setText("0");
         lbFinalAverage.setText("0");
         lbLastGrade.setText("0");
@@ -67,7 +73,7 @@ public class GradesViewController {
 
     private void setLbNeedToPass(float result){
         if (result < 5){
-            result = result - 5;
+            result = 5 - result;
             lbNeedToPass.setText(new DecimalFormat("##.##").format(result));
         }
         else{
@@ -79,22 +85,22 @@ public class GradesViewController {
         float m1 = 0;
         float m2 = 0;
         m1 = (float) ((n1 * 0.4) + (n2 * 0.6));
-        m2 = (float) ((n21 * 0.2) + (af * 0.2) + (n22 * 0.6));
+        m2 = (float) ((n12 * 0.2) + (af * 0.2) + (n22 * 0.6));
         float result = (m1 + m2) / 2;
         lbFinalAverage.setText(new DecimalFormat("##.##").format(result));
         setLbNeedToPass(result);
     }
 
     private void setLastGrade(){
-        if(n1 != 0 && n2 == 0 && n21 == 0 && n22 == 0 && af == 0)
+        if(n1 != 0 && n2 == 0 && n12 == 0 && n22 == 0 && af == 0)
             lbLastGrade.setText(new DecimalFormat("##.##").format(n1));
-        if(n1 != 0 && n2 != 0 && n21 == 0 && n22 == 0 && af == 0)
+        if(n1 != 0 && n2 != 0 && n12 == 0 && n22 == 0 && af == 0)
             lbLastGrade.setText(new DecimalFormat("##.##").format(n2));
-        if(n1 != 0 && n2 != 0 && n21 != 0 && n22 == 0 && af == 0)
-            lbLastGrade.setText(new DecimalFormat("##.##").format(n21));
-        if(n1 != 0 && n2 != 0 && n21 != 0 && af != 0 && n22 == 0)
+        if(n1 != 0 && n2 != 0 && n12 != 0 && n22 == 0 && af == 0)
+            lbLastGrade.setText(new DecimalFormat("##.##").format(n12));
+        if(n1 != 0 && n2 != 0 && n12 != 0 && af != 0 && n22 == 0)
             lbLastGrade.setText(new DecimalFormat("##.##").format(af));
-        if(n1 != 0 && n2 != 0 && n21 != 0 && af != 0 && n22 != 0)
+        if(n1 != 0 && n2 != 0 && n12 != 0 && af != 0 && n22 != 0)
             lbLastGrade.setText(new DecimalFormat("##.##").format(n22));
 
     }
@@ -107,8 +113,8 @@ public class GradesViewController {
             if(grade.getGradeTypes().getId() == 2 && grade.getSequence() == 1){
                 n2 = grade.getGrade();
             }
-            if(grade.getGradeTypes().getId() == 2 && grade.getSequence() == 1){
-                n21 = grade.getGrade();
+            if(grade.getGradeTypes().getId() == 1 && grade.getSequence() == 2){
+                n12 = grade.getGrade();
             }
             if(grade.getGradeTypes().getId() == 2 && grade.getSequence() == 2){
                 n22 = grade.getGrade();
