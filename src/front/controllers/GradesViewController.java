@@ -4,23 +4,26 @@ import business.GradesBusiness;
 import business.UserSubjectBusiness;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
 import common.VO.GradesUserSubject;
 import common.VO.User;
 import common.VO.UserSubject;
+import common.auxClasses.GradesTableViewModel;
 import front.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GradesViewController {
@@ -39,6 +42,27 @@ public class GradesViewController {
     private float af = 0;
 
     @FXML
+    private TableView<GradesTableViewModel> table;
+    @FXML
+    private TableColumn<GradesTableViewModel, Float> colSubject;
+    @FXML
+    private TableColumn<GradesTableViewModel, Float> colN11;
+    @FXML
+    private TableColumn<GradesTableViewModel, Float> colN21;
+    @FXML
+    private TableColumn<GradesTableViewModel, Float> colM1;
+    @FXML
+    private TableColumn<GradesTableViewModel, Float> colN12;
+    @FXML
+    private TableColumn<GradesTableViewModel, Float> colAF;
+    @FXML
+    private TableColumn<GradesTableViewModel, Float> colN22;
+    @FXML
+    private TableColumn<GradesTableViewModel, Float> colM2;
+    @FXML
+    private TableColumn<GradesTableViewModel, Float> colMF;
+
+    @FXML
     protected void initialize() {
         UserSubjectBusiness usb = new UserSubjectBusiness();
         User user = UserLoggedUtil.getSession();
@@ -47,6 +71,69 @@ public class GradesViewController {
         ObservableList<UserSubject> options = FXCollections.observableArrayList(us);
         cbSubjects.setItems(options);
         cbSubjects.getSelectionModel().selectFirst();
+        cbSubjects_Changed();
+
+        colSubject.setCellValueFactory(
+                new PropertyValueFactory<>("subject"));
+        colN11.setCellValueFactory(
+                new PropertyValueFactory<>("n11"));
+        colN21.setCellValueFactory(
+                new PropertyValueFactory<>("n21"));
+        colM1.setCellValueFactory(
+                new PropertyValueFactory<>("M1"));
+        colN12.setCellValueFactory(
+                new PropertyValueFactory<>("n12"));
+        colAF.setCellValueFactory(
+                new PropertyValueFactory<>("AF"));
+        colN22.setCellValueFactory(
+                new PropertyValueFactory<>("n22"));
+        colM2.setCellValueFactory(
+                new PropertyValueFactory<>("M2"));
+        colMF.setCellValueFactory(
+                new PropertyValueFactory<>("MF"));
+
+        table.setItems(gradeList());
+    }
+
+    private ObservableList<GradesTableViewModel> gradeList() {
+        GradesBusiness GB = new GradesBusiness();
+        UserSubjectBusiness USB = new UserSubjectBusiness();
+
+        User user = UserLoggedUtil.getSession();
+
+        List<UserSubject> us = USB.getAll(user);
+
+        List<List<GradesUserSubject>> gradesUserSubjectList = new ArrayList<List<GradesUserSubject>>();
+        ObservableList<GradesTableViewModel> gradesTableViewModelList = FXCollections.observableArrayList();
+
+        for(UserSubject auxUs : us) {
+            List<GradesUserSubject> gradesUserSubjectList1 = GB.getAll(auxUs);
+            gradesUserSubjectList.add(gradesUserSubjectList1);
+            String subject = gradesUserSubjectList1.get(0).getUserSubject().getSubject().getName();
+            int id = gradesUserSubjectList1.get(0).getUserSubject().getSubject().getId();
+            float n11 = 0, n21 = 0, n12 = 0, n22=0 , AF = 0;
+
+            for (GradesUserSubject gradesUserSubject : gradesUserSubjectList1) {
+                int gradeType = gradesUserSubject.getGradeTypes().getId();
+                int gradeSequence = gradesUserSubject.getSequence();
+
+                if(gradeType == 1 && gradeSequence == 1) {
+                    n11 = gradesUserSubject.getGrade();
+                } else if (gradeType == 2 && gradeSequence == 1) {
+                    n21 = gradesUserSubject.getGrade();
+                } else if (gradeType == 1 && gradeSequence == 2) {
+                    n12 = gradesUserSubject.getGrade();
+                } else if (gradeType == 2 && gradeSequence == 2) {
+                    n22 = gradesUserSubject.getGrade();
+                } else if (gradeType == 3 && gradeSequence == 2) {
+                    AF = gradesUserSubject.getGrade();
+                }
+            }
+
+            gradesTableViewModelList.add(new GradesTableViewModel(id, false, subject, n11, n21, n12, n22, AF));
+        }
+        return gradesTableViewModelList;
+    }
         if(!us.isEmpty()){
             cbSubjects_Changed();
         }
@@ -62,6 +149,16 @@ public class GradesViewController {
         populateGrades(grades);
         setLastGrade();
         setLbFinalAverage();
+        int i = 0;
+        for (GradesTableViewModel gtvm : table.getItems()) {
+            int subjectId = userSubject.getSubject().getId();
+            int modelId = gtvm.getId();
+            if(subjectId == modelId) {
+                table.getSelectionModel().select(i);
+                break;
+            }
+            i++;
+        }
     }
 
     private void ClearFields(){
