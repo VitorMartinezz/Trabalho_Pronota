@@ -84,25 +84,25 @@ public class RegisterGradesController {
                 if(grades.getGradeTypes().getId() == 1 && grades.getSequence() == 1){
                     GradesUserSubject gradesUserSubject = new GradesUserSubject();
                     gradesUserSubject.setId(grades.getId());
-                    SaveGrades(userSubject,txtN1.getText(),1,1,gradesUserSubject);
+                    SaveGrades(userSubject,txtN1.getText().isEmpty() ? "0" : txtN1.getText(),1,1,gradesUserSubject);
                     isN1ok = true;
                 }
                 else if(grades.getGradeTypes().getId() == 2 && grades.getSequence() == 1){
                     GradesUserSubject gradesUserSubject = new GradesUserSubject();
                     gradesUserSubject.setId(grades.getId());
-                    SaveGrades(userSubject,txtN2.getText(),2,1,gradesUserSubject);
+                    SaveGrades(userSubject,txtN2.getText().isEmpty() ? "0" : txtN2.getText(),2,1,gradesUserSubject);
                     isN2ok = true;
                 }
                 else if(grades.getGradeTypes().getId() == 1 && grades.getSequence() == 2){
                     GradesUserSubject gradesUserSubject = new GradesUserSubject();
                     gradesUserSubject.setId(grades.getId());
-                    SaveGrades(userSubject,txtN12.getText(),1,2,gradesUserSubject);
+                    SaveGrades(userSubject,txtN12.getText().isEmpty() ? "0" : txtN12.getText(),1,2,gradesUserSubject);
                     isN12ok = true;
                 }
                 else if(grades.getGradeTypes().getId() == 2 && grades.getSequence() == 2){
                     GradesUserSubject gradesUserSubject = new GradesUserSubject();
                     gradesUserSubject.setId(grades.getId());
-                    SaveGrades(userSubject,txtN22.getText(),2,2,gradesUserSubject);
+                    SaveGrades(userSubject,txtN22.getText().isEmpty() ? "0" : txtN22.getText(),2,2,gradesUserSubject);
                     isN22ok = true;
                 }
                 else {
@@ -110,7 +110,7 @@ public class RegisterGradesController {
                         GradesUserSubject gradesUserSubject = new GradesUserSubject();
                         GradesBusiness business = new GradesBusiness();
                         gradesUserSubject.setId(business.getAf(user).getId());
-                        SaveGrades(user,txtAF.getText(),3,2, gradesUserSubject);
+                        SaveGrades(user,txtAF.getText().isEmpty() ? "0" : txtAF.getText(),3,2, gradesUserSubject);
                     }
                     isAFok = true;
                 }
@@ -119,24 +119,24 @@ public class RegisterGradesController {
 
         if(txtN1.getSelectedText() != null && isN1ok == false){
             GradesUserSubject gradesUserSubject = new GradesUserSubject();
-            SaveGrades(userSubject,txtN1.getText(),1,1, gradesUserSubject);
+            SaveGrades(userSubject,txtN1.getText().isEmpty() ? "0" : txtN1.getText(),1,1, gradesUserSubject);
         }
         if(txtN2.getSelectedText() != null && isN2ok == false){
             GradesUserSubject gradesUserSubject = new GradesUserSubject();
-            SaveGrades(userSubject,txtN2.getText(),2,1, gradesUserSubject);
+            SaveGrades(userSubject,txtN2.getText().isEmpty() ? "0" : txtN2.getText(),2,1, gradesUserSubject);
         }
         if(txtN12.getSelectedText() != null && isN12ok == false){
             GradesUserSubject gradesUserSubject = new GradesUserSubject();
-            SaveGrades(userSubject,txtN12.getText(),1,2, gradesUserSubject);
+            SaveGrades(userSubject,txtN12.getText().isEmpty() ? "0" : txtN12.getText(),1,2, gradesUserSubject);
         }
         if(txtN22.getSelectedText() != null && isN22ok == false){
             GradesUserSubject gradesUserSubject = new GradesUserSubject();
-            SaveGrades(userSubject,txtN22.getText(),2,2, gradesUserSubject);
+            SaveGrades(userSubject,txtN22.getText().isEmpty() ? "0" : txtN22.getText(),2,2, gradesUserSubject);
         }
         if(txtAF.getSelectedText() != null && isAFok == false){
             for (UserSubject user : (List<UserSubject>)cbSubjects.getItems()){
                 GradesUserSubject gradesUserSubject = new GradesUserSubject();
-                SaveGrades(user,txtAF.getText(),3,2, gradesUserSubject);
+                SaveGrades(user,txtAF.getText().isEmpty() ? "0" : txtAF.getText(),3,2, gradesUserSubject);
             }
         }
         ClearAllFields();
