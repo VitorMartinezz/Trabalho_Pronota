@@ -11,6 +11,12 @@ public class Content {
     @Lob
     private byte[] content;
 
+    private String title;
+
+    private String link;
+
+    private String fileName;
+
     private int likes;
 
     @ManyToOne(optional = false)
@@ -18,6 +24,22 @@ public class Content {
 
     @ManyToOne(optional = false)
     private Subject subject;
+
+    public String getFileName() {
+        return this.fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public int getId() {
         return id;
@@ -57,5 +79,13 @@ public class Content {
 
     public void setSubject(Subject subject) {
         this.subject = subject;
+    }
+
+    public String getLink() {
+        return this.link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }
