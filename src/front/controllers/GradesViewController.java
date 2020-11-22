@@ -111,29 +111,31 @@ public class GradesViewController {
 
         for(UserSubject auxUs : us) {
             List<GradesUserSubject> gradesUserSubjectList1 = GB.getAll(auxUs);
-            gradesUserSubjectList.add(gradesUserSubjectList1);
-            String subject = gradesUserSubjectList1.get(0).getUserSubject().getSubject().getName();
-            int id = gradesUserSubjectList1.get(0).getUserSubject().getSubject().getId();
-            float n11 = 0, n21 = 0, n12 = 0, n22=0 , AF = 0;
+            if(gradesUserSubjectList1.size() > 0) {
+                gradesUserSubjectList.add(gradesUserSubjectList1);
+                String subject = gradesUserSubjectList1.get(0).getUserSubject().getSubject().getName();
+                int id = gradesUserSubjectList1.get(0).getUserSubject().getSubject().getId();
+                float n11 = 0, n21 = 0, n12 = 0, n22=0 , AF = 0;
 
-            for (GradesUserSubject gradesUserSubject : gradesUserSubjectList1) {
-                int gradeType = gradesUserSubject.getGradeTypes().getId();
-                int gradeSequence = gradesUserSubject.getSequence();
+                for (GradesUserSubject gradesUserSubject : gradesUserSubjectList1) {
+                    int gradeType = gradesUserSubject.getGradeTypes().getId();
+                    int gradeSequence = gradesUserSubject.getSequence();
 
-                if(gradeType == 1 && gradeSequence == 1) {
-                    n11 = gradesUserSubject.getGrade();
-                } else if (gradeType == 2 && gradeSequence == 1) {
-                    n21 = gradesUserSubject.getGrade();
-                } else if (gradeType == 1 && gradeSequence == 2) {
-                    n12 = gradesUserSubject.getGrade();
-                } else if (gradeType == 2 && gradeSequence == 2) {
-                    n22 = gradesUserSubject.getGrade();
-                } else if (gradeType == 3 && gradeSequence == 2) {
-                    AF = gradesUserSubject.getGrade();
+                    if(gradeType == 1 && gradeSequence == 1) {
+                        n11 = gradesUserSubject.getGrade();
+                    } else if (gradeType == 2 && gradeSequence == 1) {
+                        n21 = gradesUserSubject.getGrade();
+                    } else if (gradeType == 1 && gradeSequence == 2) {
+                        n12 = gradesUserSubject.getGrade();
+                    } else if (gradeType == 2 && gradeSequence == 2) {
+                        n22 = gradesUserSubject.getGrade();
+                    } else if (gradeType == 3 && gradeSequence == 2) {
+                        AF = gradesUserSubject.getGrade();
+                    }
                 }
-            }
 
-            gradesTableViewModelList.add(new GradesTableViewModel(id, false, subject, n11, n21, n12, n22, AF));
+                gradesTableViewModelList.add(new GradesTableViewModel(id, false, subject, n11, n21, n12, n22, AF));
+            }
         }
         return gradesTableViewModelList;
 
@@ -206,21 +208,23 @@ public class GradesViewController {
     }
 
     private void populateGrades(List<GradesUserSubject> grades){
-        for (GradesUserSubject grade : grades){
-            if(grade.getGradeTypes().getId() == 1 && grade.getSequence() == 1){
-                n1 = grade.getGrade();
-            }
-            if(grade.getGradeTypes().getId() == 2 && grade.getSequence() == 1){
-                n2 = grade.getGrade();
-            }
-            if(grade.getGradeTypes().getId() == 1 && grade.getSequence() == 2){
-                n12 = grade.getGrade();
-            }
-            if(grade.getGradeTypes().getId() == 2 && grade.getSequence() == 2){
-                n22 = grade.getGrade();
-            }
-            if(grade.getGradeTypes().getId() == 3 && grade.getSequence() == 2){
-                af = grade.getGrade();
+        if(grades != null) {
+            for (GradesUserSubject grade : grades){
+                if(grade.getGradeTypes().getId() == 1 && grade.getSequence() == 1){
+                    n1 = grade.getGrade();
+                }
+                if(grade.getGradeTypes().getId() == 2 && grade.getSequence() == 1){
+                    n2 = grade.getGrade();
+                }
+                if(grade.getGradeTypes().getId() == 1 && grade.getSequence() == 2){
+                    n12 = grade.getGrade();
+                }
+                if(grade.getGradeTypes().getId() == 2 && grade.getSequence() == 2){
+                    n22 = grade.getGrade();
+                }
+                if(grade.getGradeTypes().getId() == 3 && grade.getSequence() == 2){
+                    af = grade.getGrade();
+                }
             }
         }
     }

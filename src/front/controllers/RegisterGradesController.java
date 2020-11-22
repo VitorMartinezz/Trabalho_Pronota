@@ -33,6 +33,11 @@ public class RegisterGradesController {
         UserSubjectBusiness usb = new UserSubjectBusiness();
         User user = UserLoggedUtil.getSession();
         List<UserSubject> us = usb.getAll(user);
+        txtN1.setText("0");
+        txtN2.setText("0");
+        txtN12.setText("0");
+        txtN22.setText("0");
+        txtAF.setText("0");
 
         ObservableList<UserSubject> options = FXCollections.observableArrayList(us);
         cbSubjects.setItems(options);
