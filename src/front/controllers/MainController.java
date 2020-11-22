@@ -52,7 +52,8 @@ public class MainController {
     private void SwitchView(String ViewName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(ViewName));
         AnchorPane ap = fxmlLoader.load();
-
+        if(ViewName == "views/GradesView.fxml")
+            BuildScreenUtil.setGradesView((GradesViewController) fxmlLoader.getController());
         apViewer.getChildren().removeAll();
         apViewer.getChildren().setAll(ap);
     }

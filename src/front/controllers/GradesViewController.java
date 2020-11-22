@@ -42,7 +42,7 @@ public class GradesViewController {
     private float af = 0;
 
     @FXML
-    private TableView<GradesTableViewModel> table;
+    public TableView<GradesTableViewModel> table;
     @FXML
     private TableColumn<GradesTableViewModel, Float> colSubject;
     @FXML
@@ -98,7 +98,7 @@ public class GradesViewController {
         }
     }
 
-    private ObservableList<GradesTableViewModel> gradeList() {
+    public ObservableList<GradesTableViewModel> gradeList() {
         GradesBusiness GB = new GradesBusiness();
         UserSubjectBusiness USB = new UserSubjectBusiness();
 
@@ -142,7 +142,7 @@ public class GradesViewController {
 }
 
     @FXML
-    private void cbSubjects_Changed(){
+    public void cbSubjects_Changed(){
         ClearFields();
         UserSubject userSubject = (UserSubject) cbSubjects.getSelectionModel().getSelectedItem();
         GradesBusiness gradesBusiness = new GradesBusiness();

@@ -7,6 +7,7 @@ import com.fasterxml.classmate.util.ClassStack;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
 import common.VO.*;
 import javafx.collections.FXCollections;
@@ -141,6 +142,9 @@ public class RegisterGradesController {
         if(txtAF.getSelectedText() != null && isAFok == false){
             for (UserSubject user : (List<UserSubject>)cbSubjects.getItems()){
                 GradesUserSubject gradesUserSubject = new GradesUserSubject();
+                GradesBusiness business = new GradesBusiness();
+                if(business.getAf(user) != null)
+                    gradesUserSubject.setId(business.getAf(user).getId());
                 SaveGrades(user,txtAF.getText().isEmpty() ? "0" : txtAF.getText(),3,2, gradesUserSubject);
             }
         }
@@ -186,6 +190,9 @@ public class RegisterGradesController {
     }
 
     public void btnClose_Click(){
+        GradesViewController test = (GradesViewController) BuildScreenUtil.getGradesView();
+        test.cbSubjects_Changed();
+        test.table.setItems(test.gradeList());
         Stage stage = (Stage)btnClose.getScene().getWindow();
         stage.close();
     }
