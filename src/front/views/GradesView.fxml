@@ -2,8 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -12,6 +10,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="front.controllers.GradesViewController">
     <children>
         <GridPane prefHeight="651.0" prefWidth="1095.0" style="-fx-background-color: #e8deff;">
@@ -170,17 +170,19 @@
                                 </GridPane>
                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                     <children>
-                                        <TreeTableView layoutX="19.0" layoutY="9.0" prefHeight="303.0" prefWidth="1019.0">
+                                        <TableView fx:id="table" layoutX="19.0" layoutY="9.0" prefHeight="303.0" prefWidth="1019.0">
                                             <columns>
-                                                <TreeTableColumn prefWidth="134.0" text="N1" />
-                                                <TreeTableColumn minWidth="0.0" prefWidth="136.0" text="N2" />
-                                                <TreeTableColumn minWidth="0.0" prefWidth="131.0" text="1ª Média" />
-                                                <TreeTableColumn minWidth="0.0" prefWidth="133.0" text="N1 - II" />
-                                                <TreeTableColumn minWidth="0.0" prefWidth="148.0" text="N2 - II" />
-                                                <TreeTableColumn minWidth="0.0" prefWidth="151.0" text="AF" />
-                                                <TreeTableColumn minWidth="0.0" prefWidth="185.0" text="Média Final" />
+                                                <TableColumn prefWidth="111" text="Matéria" fx:id="colSubject" />
+                                                <TableColumn minWidth="0.0" prefWidth="111" text="N1" fx:id="colN11" />
+                                                <TableColumn minWidth="0.0" prefWidth="111" text="N2" fx:id="colN21" />
+                                                <TableColumn minWidth="0.0" prefWidth="111" text="1ª Média" fx:id="colM1" />
+                                                <TableColumn minWidth="0.0" prefWidth="111" text="N1 - II" fx:id="colN12" />
+                                                <TableColumn minWidth="0.0" prefWidth="111" text="N2 - II" fx:id="colN22" />
+                                                <TableColumn minWidth="0.0" prefWidth="111" text="AF" fx:id="colAF" />
+                                                <TableColumn minWidth="0.0" prefWidth="111" text="1ª Média" fx:id="colM2" />
+                                                <TableColumn minWidth="0.0" prefWidth="111" text="Média Final" fx:id="colMF" />
                                             </columns>
-                                        </TreeTableView>
+                                        </TableView>
                                     </children>
                                 </AnchorPane>
                             </children>
