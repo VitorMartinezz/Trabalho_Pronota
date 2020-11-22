@@ -7,6 +7,7 @@ import common.VO.Role;
 import common.VO.User;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
+import front.Main;
 import front.services.validators.ConfirmPWValidator;
 import front.services.validators.EmailValidator;
 import com.jfoenix.controls.JFXButton;
@@ -107,7 +108,7 @@ public class RegisterController {
     private void ReturnToLogin() throws IOException {
         Stage mainStage = (Stage)btnClose.getScene().getWindow();
         mainStage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("../views/LoginWindow.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("views/LoginWindow.fxml"));
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         Stage primaryStage = new Stage();

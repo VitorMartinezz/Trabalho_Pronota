@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextField;
 import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
 import common.VO.User;
+import front.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -33,6 +34,7 @@ public class LoginController {
 
         UserBusiness Ub = new UserBusiness();
         User user = Ub.login(txtEmail.getText(), txtPassword.getText());
+
         if (user != null) {
             Stage LoginStage = (Stage) btnLogin.getScene().getWindow();
             LoginStage.close();
@@ -40,11 +42,11 @@ public class LoginController {
             UserLoggedUtil.setSession(user);
 
             FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent root = fxmlLoader.load(getClass().getResource("../views/MainWindow.fxml"));
+            Parent root = fxmlLoader.load(Main.class.getResource("views/MainWindow.fxml"));
 
             BuildScreenUtil.createScreen(root, "Inicio");
         } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../views/dialogs/MessageDialogWindow.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/dialogs/MessageDialogWindow.fxml"));
             Parent root = fxmlLoader.load();
 
             MessageDialogController controller = fxmlLoader.getController();
@@ -62,7 +64,7 @@ public class LoginController {
     public void btnRegister_Click() throws IOException {
         Stage LoginStage = (Stage) btnLogin.getScene().getWindow();
         LoginStage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("../views/RegisterWindow.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("views/RegisterWindow.fxml"));
         BuildScreenUtil.createScreen(root, "Cadastro");
     }
 }

@@ -10,6 +10,7 @@ import common.Runtime.UserLoggedUtil;
 import common.VO.GradesUserSubject;
 import common.VO.User;
 import common.VO.UserSubject;
+import front.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -126,15 +127,15 @@ public class GradesViewController {
     }
 
     public void btnRegisterGrades_Click() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../views/RegisterGrades.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("views/RegisterGrades.fxml"));
         BuildScreenUtil.createScreen(root, "Cadastro de notas");
     }
     public void btnRegisterSubjects_Click() throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("../views/RegisterSubjects.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("views/RegisterSubjects.fxml"));
         BuildScreenUtil.createScreen(root, "Cadastro de materias");
     }
     public void btnCreateSubject_Click() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../views/CreateSubject.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("views/CreateSubject.fxml"));
         BuildScreenUtil.createScreen(root, "Cria materia");
     }
 }

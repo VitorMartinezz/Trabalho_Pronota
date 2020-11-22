@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import front.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,8 @@ import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import java.io.File;
 import java.io.IOException;
 
 public class MainController {
@@ -31,7 +34,7 @@ public class MainController {
 
     @FXML
     protected void initialize() throws IOException {
-        SwitchView("../views/HomeView.fxml");
+        SwitchView("views/HomeView.fxml");
         resetColor();
         btnHome.setOpacity(1);
         icon1.setOpacity(1);
@@ -41,13 +44,13 @@ public class MainController {
 
         Stage mainStage = (Stage)btnClose.getScene().getWindow();
         mainStage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("../views/LoginWindow.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("views/LoginWindow.fxml"));
         UserLoggedUtil.cleanSession();
         BuildScreenUtil.createScreen(root, "Login");
     }
 
     private void SwitchView(String ViewName) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(ViewName));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(ViewName));
         AnchorPane ap = fxmlLoader.load();
 
         apViewer.getChildren().removeAll();
@@ -58,31 +61,31 @@ public class MainController {
         resetColor();
         btnHome.setOpacity(1);
         icon1.setOpacity(1);
-        SwitchView("../views/HomeView.fxml");
+        SwitchView("views/HomeView.fxml");
     }
     public void btnGrades_Click() throws IOException {
         resetColor();
         btnGrades.setOpacity(1);
         icon2.setOpacity(1);
-        SwitchView("../views/GradesView.fxml");
+        SwitchView("views/GradesView.fxml");
     }
     public void btnStudy_Click() throws IOException {
         resetColor();
         btnStudy.setOpacity(1);
         icon3.setOpacity(1);
-        SwitchView("../views/StudyView.fxml");
+        SwitchView("views/StudyView.fxml");
     }
     public void btnCalender_Click() throws IOException {
         resetColor();
         btnCalender.setOpacity(1);
         icon4.setOpacity(1);
-        SwitchView("../views/CalenderView.fxml");
+        SwitchView("views/CalenderView.fxml");
     }
     public void btnFeedback_Click() throws IOException {
         resetColor();
         btnFeedback.setOpacity(1);
         icon5.setOpacity(1);
-        SwitchView("../views/FeedbackView.fxml");
+        SwitchView("views/FeedbackView.fxml");
     }
 
     private void resetColor(){

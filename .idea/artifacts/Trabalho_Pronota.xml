@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Trabalho_Pronota">
+    <output-path>$PROJECT_DIR$/out/artifacts/Trabalho_Pronota</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="front.Main" />
+        <option name="description" value="Pronota" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="Pronota" />
+        <option name="vendor" value="Pronota" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Trabalho_Pronota.jar">
+        <element id="module-output" name="Trabalho_Pronota" />
+      </element>
+    </root>
+  </artifact>
+</component>

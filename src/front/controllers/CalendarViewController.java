@@ -2,6 +2,7 @@ package front.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import common.Runtime.BuildScreenUtil;
+import front.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +16,7 @@ public class CalendarViewController {
 
     @FXML
     private void btnRegisterEvents_Click() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../views/RegisterEvents.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("views/RegisterEvents.fxml"));
         BuildScreenUtil.createScreen(root, "Cadastro de Eventos");
     }
 
