@@ -36,7 +36,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="650.0" prefWidth="165.0" style="-fx-background-color: #6237a0;" GridPane.rowIndex="1">
                      <children>
-                        <JFXButton fx:id="btnHome" onMouseClicked="#btnHome_Click" alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="70.0" prefWidth="184.0" style="-fx-background-color: #6d2aff;" text="INÍCIO" textAlignment="CENTER" textFill="WHITE">
+                        <JFXButton fx:id="btnHome" onMouseClicked="#btnHome_Click" alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="70.0" prefWidth="184.0" style="-fx-background-color: #transparent;" text="INÍCIO" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -51,7 +51,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="btnCalender" onMouseClicked="#btnCalender_Click" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="212.0" prefHeight="70.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="CALENDÁRIO" textAlignment="CENTER" textFill="WHITE">
+                        <JFXButton fx:id="btnCalender" onMouseClicked="#btnCalender_Click" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="212.0" prefHeight="70.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="EVENTOS" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -66,12 +66,12 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <FontAwesomeIcon fill="WHITE" glyphName="HOME" layoutX="8.0" layoutY="47.0" size="2.5em" wrappingWidth="28.000032365322113" />
-                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS" layoutX="11.0" layoutY="117.0" size="2.5em" />
-                        <FontAwesomeIcon fill="WHITE" glyphName="BOOK" layoutX="9.0" layoutY="187.0" size="2.5em" />
-                        <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" layoutX="9.0" layoutY="257.0" size="2.5em" />
-                        <FontAwesomeIcon fill="WHITE" glyphName="STAR" layoutX="9.0" layoutY="327.0" size="2.5em" />
-                        <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" layoutX="13.0" layoutY="624.0" size="2.5em" />
+                        <FontAwesomeIcon fx:id="icon1" fill="WHITE" glyphName="HOME" layoutX="8.0" layoutY="47.0" size="2.5em" wrappingWidth="28.000032365322113" />
+                        <FontAwesomeIcon fx:id="icon2" fill="WHITE" glyphName="PLUS" layoutX="11.0" layoutY="117.0" size="2.5em" />
+                        <FontAwesomeIcon fx:id="icon3" fill="WHITE" glyphName="BOOK" layoutX="9.0" layoutY="187.0" size="2.5em" />
+                        <FontAwesomeIcon fx:id="icon4" fill="WHITE" glyphName="CALENDAR" layoutX="9.0" layoutY="257.0" size="2.5em" />
+                        <FontAwesomeIcon fx:id="icon5" fill="WHITE" glyphName="STAR" layoutX="9.0" layoutY="327.0" size="2.5em" />
+                        <FontAwesomeIcon fx:id="icon6" fill="WHITE" glyphName="ARROW_LEFT" layoutX="13.0" layoutY="624.0" size="2.5em" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6237a0;">
