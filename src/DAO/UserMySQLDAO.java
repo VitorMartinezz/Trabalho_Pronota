@@ -9,9 +9,8 @@ import javax.persistence.Query;
 
 public class UserMySQLDAO {
     public static boolean insert(User newUser) {
+        EntityManager em = SessionUtil.getSession();
         try {
-            EntityManager em = SessionUtil.getSession();
-
             em.getTransaction().begin();
             em.persist(newUser);
             em.getTransaction().commit();
@@ -26,6 +25,7 @@ public class UserMySQLDAO {
             return true;
 
         } catch (Exception e) {
+            em.getTransaction().rollback();
             return false;
         }
     }

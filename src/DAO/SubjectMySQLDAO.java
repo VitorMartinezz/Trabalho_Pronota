@@ -10,15 +10,15 @@ import java.util.List;
 
 public class SubjectMySQLDAO {
     public static boolean insert(Subject newSubject) {
+        EntityManager em = SessionUtil.getSession();
         try {
-            EntityManager em = SessionUtil.getSession();
-
             em.getTransaction().begin();
             em.persist(newSubject);
             em.getTransaction().commit();
 
             return true;
         } catch (Exception e) {
+            em.getTransaction().rollback();
             return false;
         }
     }

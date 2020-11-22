@@ -12,15 +12,15 @@ import java.util.List;
 
 public class GradeMySQLDAO {
     public static boolean insert(GradesUserSubject newGradesUserSubject) {
+        EntityManager em = SessionUtil.getSession();
         try {
-            EntityManager em = SessionUtil.getSession();
-
             em.getTransaction().begin();
             em.merge(newGradesUserSubject);
             em.getTransaction().commit();
 
             return true;
         } catch (Exception e) {
+            em.getTransaction().rollback();
             return false;
         }
     }

@@ -12,8 +12,8 @@ import java.util.List;
 
 public class UserSubjectMySQLDAO {
     public static boolean insert(UserSubject newUserSubject) {
+        EntityManager em = SessionUtil.getSession();
         try {
-            EntityManager em = SessionUtil.getSession();
 
             em.getTransaction().begin();
             em.persist(newUserSubject);
@@ -21,6 +21,7 @@ public class UserSubjectMySQLDAO {
 
             return true;
         } catch (Exception e) {
+            em.getTransaction().rollback();
             return false;
         }
     }

@@ -20,6 +20,16 @@ public class GradesTableViewModel {
     private final SimpleFloatProperty AF;
     private final SimpleFloatProperty M2;
 
+    public float getMF() {
+        return (float) 0.12;
+    }
+
+    public SimpleFloatProperty MFProperty() {
+        return MF;
+    }
+
+    private final SimpleFloatProperty MF;
+
     public boolean isSelected() {
         return selected.get();
     }
@@ -92,16 +102,6 @@ public class GradesTableViewModel {
         return M2;
     }
 
-    public float getMF() {
-        return (float) ((getM1() * 0.5) + (getM2() * 0.5));
-    }
-
-    public SimpleFloatProperty MFProperty() {
-        return MF;
-    }
-
-    private final SimpleFloatProperty MF;
-
     public GradesTableViewModel(int id, Boolean selected, String subject, Float n11, Float n21, Float n12, Float n22, Float af) {
         this.id = id;
         this.selected = new SimpleBooleanProperty(selected);
@@ -113,7 +113,7 @@ public class GradesTableViewModel {
         this.n22 = new SimpleFloatProperty(n22);
         AF = new SimpleFloatProperty(af);
         M2 = new SimpleFloatProperty(0);
-        MF = new SimpleFloatProperty(0);
+        MF = new SimpleFloatProperty((float) ((((getN11() * 0.4) + (getN21() * 0.6)) * 0.5) + (((getN12() * 0.2) + (getAF() * 0.2) + (getN22() * 0.6)) * 0.5)));
     }
 
 

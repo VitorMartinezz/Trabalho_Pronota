@@ -4,6 +4,9 @@ import common.generic.model;
 
 import javax.persistence.*;
 
+@Table(name = "tbUserSubjects",
+        uniqueConstraints = { @UniqueConstraint( columnNames = { "user_id", "subject_id" } ) })
+
 @Entity(name = "tbUserSubjects")
 public class UserSubject extends model {
     @Id
