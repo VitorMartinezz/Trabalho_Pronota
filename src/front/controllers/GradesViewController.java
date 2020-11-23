@@ -73,27 +73,18 @@ public class GradesViewController {
         cbSubjects.getSelectionModel().selectFirst();
         cbSubjects_Changed();
 
-        colSubject.setCellValueFactory(
-                new PropertyValueFactory<>("subject"));
-        colN11.setCellValueFactory(
-                new PropertyValueFactory<>("n11"));
-        colN21.setCellValueFactory(
-                new PropertyValueFactory<>("n21"));
-        colM1.setCellValueFactory(
-                new PropertyValueFactory<>("M1"));
-        colN12.setCellValueFactory(
-                new PropertyValueFactory<>("n12"));
-        colAF.setCellValueFactory(
-                new PropertyValueFactory<>("AF"));
-        colN22.setCellValueFactory(
-                new PropertyValueFactory<>("n22"));
-        colM2.setCellValueFactory(
-                new PropertyValueFactory<>("M2"));
-        colMF.setCellValueFactory(
-                new PropertyValueFactory<>("MF"));
+        colSubject.setCellValueFactory(new PropertyValueFactory<>("subject"));
+        colN11.setCellValueFactory(new PropertyValueFactory<>("n11"));
+        colN21.setCellValueFactory(new PropertyValueFactory<>("n21"));
+        colM1.setCellValueFactory(new PropertyValueFactory<>("M1"));
+        colN12.setCellValueFactory(new PropertyValueFactory<>("n12"));
+        colAF.setCellValueFactory(new PropertyValueFactory<>("AF"));
+        colN22.setCellValueFactory(new PropertyValueFactory<>("n22"));
+        colM2.setCellValueFactory(new PropertyValueFactory<>("M2"));
+        colMF.setCellValueFactory(new PropertyValueFactory<>("MF"));
 
         table.setItems(gradeList());
-        if(!us.isEmpty()){
+        if (!us.isEmpty()) {
             cbSubjects_Changed();
         }
     }
@@ -109,19 +100,19 @@ public class GradesViewController {
         List<List<GradesUserSubject>> gradesUserSubjectList = new ArrayList<List<GradesUserSubject>>();
         ObservableList<GradesTableViewModel> gradesTableViewModelList = FXCollections.observableArrayList();
 
-        for(UserSubject auxUs : us) {
+        for (UserSubject auxUs : us) {
             List<GradesUserSubject> gradesUserSubjectList1 = GB.getAll(auxUs);
-            if(gradesUserSubjectList1.size() > 0) {
+            if (gradesUserSubjectList1.size() > 0) {
                 gradesUserSubjectList.add(gradesUserSubjectList1);
                 String subject = gradesUserSubjectList1.get(0).getUserSubject().getSubject().getName();
                 int id = gradesUserSubjectList1.get(0).getUserSubject().getSubject().getId();
-                float n11 = 0, n21 = 0, n12 = 0, n22=0 , AF = 0;
+                float n11 = 0, n21 = 0, n12 = 0, n22 = 0, AF = 0;
 
                 for (GradesUserSubject gradesUserSubject : gradesUserSubjectList1) {
                     int gradeType = gradesUserSubject.getGradeTypes().getId();
                     int gradeSequence = gradesUserSubject.getSequence();
 
-                    if(gradeType == 1 && gradeSequence == 1) {
+                    if (gradeType == 1 && gradeSequence == 1) {
                         n11 = gradesUserSubject.getGrade();
                     } else if (gradeType == 2 && gradeSequence == 1) {
                         n21 = gradesUserSubject.getGrade();
@@ -139,10 +130,10 @@ public class GradesViewController {
         }
         return gradesTableViewModelList;
 
-}
+    }
 
     @FXML
-    public void cbSubjects_Changed(){
+    public void cbSubjects_Changed() {
         ClearFields();
         UserSubject userSubject = (UserSubject) cbSubjects.getSelectionModel().getSelectedItem();
         GradesBusiness gradesBusiness = new GradesBusiness();
@@ -154,7 +145,7 @@ public class GradesViewController {
         for (GradesTableViewModel gtvm : table.getItems()) {
             int subjectId = userSubject.getSubject().getId();
             int modelId = gtvm.getId();
-            if(subjectId == modelId) {
+            if (subjectId == modelId) {
                 table.getSelectionModel().select(i);
                 break;
             }
@@ -162,7 +153,7 @@ public class GradesViewController {
         }
     }
 
-    private void ClearFields(){
+    private void ClearFields() {
         n1 = 0;
         n2 = 0;
         n12 = 0;
@@ -173,17 +164,16 @@ public class GradesViewController {
         lbLastGrade.setText("0");
     }
 
-    private void setLbNeedToPass(float result){
-        if (result < 5){
+    private void setLbNeedToPass(float result) {
+        if (result < 5) {
             result = 5 - result;
             lbNeedToPass.setText(new DecimalFormat("##.##").format(result));
-        }
-        else{
+        } else {
             lbNeedToPass.setText("OK");
         }
     }
 
-    private void setLbFinalAverage(){
+    private void setLbFinalAverage() {
         float m1 = 0;
         float m2 = 0;
         m1 = (float) ((n1 * 0.4) + (n2 * 0.6));
@@ -193,36 +183,36 @@ public class GradesViewController {
         setLbNeedToPass(result);
     }
 
-    private void setLastGrade(){
-        if(n1 != 0 && n2 == 0 && n12 == 0 && n22 == 0 && af == 0)
+    private void setLastGrade() {
+        if (n1 != 0 && n2 == 0 && n12 == 0 && n22 == 0 && af == 0)
             lbLastGrade.setText(new DecimalFormat("##.##").format(n1));
-        if(n1 != 0 && n2 != 0 && n12 == 0 && n22 == 0 && af == 0)
+        if (n1 != 0 && n2 != 0 && n12 == 0 && n22 == 0 && af == 0)
             lbLastGrade.setText(new DecimalFormat("##.##").format(n2));
-        if(n1 != 0 && n2 != 0 && n12 != 0 && n22 == 0 && af == 0)
+        if (n1 != 0 && n2 != 0 && n12 != 0 && n22 == 0 && af == 0)
             lbLastGrade.setText(new DecimalFormat("##.##").format(n12));
-        if(n1 != 0 && n2 != 0 && n12 != 0 && af != 0 && n22 == 0)
+        if (n1 != 0 && n2 != 0 && n12 != 0 && af != 0 && n22 == 0)
             lbLastGrade.setText(new DecimalFormat("##.##").format(af));
-        if(n1 != 0 && n2 != 0 && n12 != 0 && af != 0 && n22 != 0)
+        if (n1 != 0 && n2 != 0 && n12 != 0 && af != 0 && n22 != 0)
             lbLastGrade.setText(new DecimalFormat("##.##").format(n22));
 
     }
 
-    private void populateGrades(List<GradesUserSubject> grades){
-        if(grades != null) {
-            for (GradesUserSubject grade : grades){
-                if(grade.getGradeTypes().getId() == 1 && grade.getSequence() == 1){
+    private void populateGrades(List<GradesUserSubject> grades) {
+        if (grades != null) {
+            for (GradesUserSubject grade : grades) {
+                if (grade.getGradeTypes().getId() == 1 && grade.getSequence() == 1) {
                     n1 = grade.getGrade();
                 }
-                if(grade.getGradeTypes().getId() == 2 && grade.getSequence() == 1){
+                if (grade.getGradeTypes().getId() == 2 && grade.getSequence() == 1) {
                     n2 = grade.getGrade();
                 }
-                if(grade.getGradeTypes().getId() == 1 && grade.getSequence() == 2){
+                if (grade.getGradeTypes().getId() == 1 && grade.getSequence() == 2) {
                     n12 = grade.getGrade();
                 }
-                if(grade.getGradeTypes().getId() == 2 && grade.getSequence() == 2){
+                if (grade.getGradeTypes().getId() == 2 && grade.getSequence() == 2) {
                     n22 = grade.getGrade();
                 }
-                if(grade.getGradeTypes().getId() == 3 && grade.getSequence() == 2){
+                if (grade.getGradeTypes().getId() == 3 && grade.getSequence() == 2) {
                     af = grade.getGrade();
                 }
             }
@@ -233,13 +223,14 @@ public class GradesViewController {
         Parent root = FXMLLoader.load(Main.class.getResource("views/RegisterGrades.fxml"));
         BuildScreenUtil.createScreen(root, "Cadastro de notas");
     }
-    public void btnRegisterSubjects_Click() throws IOException{
+
+    public void btnRegisterSubjects_Click() throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("views/RegisterSubjects.fxml"));
         BuildScreenUtil.createScreen(root, "Cadastro de materias");
     }
+
     public void btnCreateSubject_Click() throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("views/CreateSubject.fxml"));
         BuildScreenUtil.createScreen(root, "Cria materia");
     }
 }
-
