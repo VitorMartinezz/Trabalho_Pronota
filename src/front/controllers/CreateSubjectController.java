@@ -39,6 +39,14 @@ public class CreateSubjectController {
     }
 
     public void btnClearFields_Click() {
+        ClearAllFields();
+    }
+
+    private void ClearAllFields(){
+
+        txtName.setText("");
+        txtDescription.setText("");
+        cbArea.getSelectionModel().select(-1);
 
     }
 

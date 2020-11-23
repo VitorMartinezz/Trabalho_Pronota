@@ -111,7 +111,7 @@
                               <JFXComboBox fx:id="cbSubject6" stylesheets="@css/createSubject.css" focusColor="#b19cd9" unFocusColor="#b19cd9" layoutX="71.0" layoutY="26.0" prefHeight="25.0" prefWidth="135.0" />
                            </children>
                         </AnchorPane>
-                        <JFXButton layoutX="556.0" layoutY="344.0" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #FF0000;" text="Limpar Campos" textFill="WHITE" />
+                        <JFXButton fx:id="btnLimpar" onMouseClicked="#btnLimpar_Click" layoutX="556.0" layoutY="344.0" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #FF0000;" text="Limpar Campos" textFill="WHITE" />
                      </children>
                   </AnchorPane>
                </children>

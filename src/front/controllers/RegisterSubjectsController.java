@@ -47,6 +47,21 @@ public class RegisterSubjectsController {
         LoginStage.close();
     }
 
+    public void btnLimpar_Click(){
+        ClearAllFields();
+    }
+
+    private void ClearAllFields(){
+
+        cbSubject1.getSelectionModel().select(-1);
+        cbSubject2.getSelectionModel().select(-1);
+        cbSubject3.getSelectionModel().select(-1);
+        cbSubject4.getSelectionModel().select(-1);
+        cbSubject5.getSelectionModel().select(-1);
+        cbSubject6.getSelectionModel().select(-1);
+
+    }
+
     public void btnSaveSubjects_Click(){
         Subject subject1 = (Subject) cbSubject1.getSelectionModel().getSelectedItem();
         Subject subject2 = (Subject) cbSubject2.getSelectionModel().getSelectedItem();
