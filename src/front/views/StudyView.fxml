@@ -2,8 +2,8 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -52,7 +52,7 @@
                                         </Text>
                                     </left>
                                     <center>
-                                        <JFXComboBox focusColor="#405aa8" prefHeight="47.0" prefWidth="190.0" unFocusColor="#b19cd9" BorderPane.alignment="CENTER" />
+                                        <JFXComboBox fx:id="cbSubjects" onAction="#onSubjectChange" focusColor="#405aa8" prefHeight="47.0" prefWidth="190.0" unFocusColor="#b19cd9" BorderPane.alignment="CENTER" />
                                     </center>
                                 </BorderPane>
                                 <JFXButton fx:id="btnRegisterContent" onMouseClicked="#btnRegisterContent_Click" layoutX="927.0" layoutY="61.0" prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: #6237a0;" text="Cadastrar Conteúdo" textFill="WHITE" />
@@ -64,11 +64,15 @@
                     <children>
                         <BorderPane layoutX="17.0" prefHeight="25.0" prefWidth="358.0" style="-fx-background-color: #B19CD9;" />
                         <BorderPane layoutX="17.0" layoutY="16.0" prefHeight="510.0" prefWidth="1066.0" style="-fx-background-color: #B19CD9; -fx-background-radius: 25;" />
-                        <TreeTableView layoutX="34.0" layoutY="33.0" prefHeight="477.0" prefWidth="1032.0">
+                        <TableView layoutX="34.0" layoutY="33.0" prefHeight="477.0" prefWidth="1032.0" fx:id="table">
                             <columns>
-                                <TreeTableColumn prefWidth="1031.0" text="A estudar" />
+                                <TableColumn prefWidth="206" text="Titulo" fx:id="colTitle" />
+                                <TableColumn prefWidth="206" text="Matéria" fx:id="colSubject" />
+                                <TableColumn prefWidth="50" text="Likes" fx:id="colLikes" />
+                                <TableColumn prefWidth="206" text="Link" fx:id="colLink" />
+                                <TableColumn prefWidth="206" text="Nome do arquivo" fx:id="colFileName" />
                             </columns>
-                        </TreeTableView>
+                        </TableView>
                     </children>
                 </AnchorPane>
             </children>
