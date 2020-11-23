@@ -48,7 +48,7 @@ public class HomeViewController {
         User user = UserLoggedUtil.getSession();
         List<UserSubject> us = usb.getAll(user);
         GradesBusiness gradesBusiness = new GradesBusiness();
-        int i = 0;
+
         for (UserSubject uss : us){
 
             List<GradesUserSubject> grades = gradesBusiness.getAll(uss);
@@ -76,14 +76,14 @@ public class HomeViewController {
 
 
     private void initBarChart(XYChart.Series series1, XYChart.Series series2, XYChart.Series series3, XYChart.Series series4, XYChart.Series series5){
-        final CategoryAxis xAxis = new CategoryAxis();
-        final NumberAxis yAxis = new NumberAxis();
-        final BarChart<String,Number> bc =
-                new BarChart<String,Number>(xAxis,yAxis);
-        bc.setTitle("Notas");
-        yAxis.setMaxHeight(10);
-        xAxis.setLabel("Máterias");
-        yAxis.setLabel("Notas");
+        //final CategoryAxis xAxis = new CategoryAxis();
+        //final NumberAxis yAxis = new NumberAxis();
+        //final BarChart<String,Number> bc =
+        //        new BarChart<String,Number>(xAxis,yAxis);
+        //bc.setTitle("Notas");
+        //yAxis.setMaxHeight(10);
+        //xAxis.setLabel("Máterias");
+        //yAxis.setLabel("Notas");
 
         bcGrades.getData().addAll(series1,series2,series3,series4,series5);
     }
