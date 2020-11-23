@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXTextField;
 
 import business.ContentBusiness;
 import business.SubjectBusiness;
+import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
 import common.VO.Content;
 import common.VO.Subject;
@@ -88,6 +89,9 @@ public class RegisterContentController {
         ContentBusiness CB = new ContentBusiness();
         CB.create(content);
 
+        StudyViewController stView = BuildScreenUtil.getStudyView();
+        stView.table.setItems(stView.gradeList());
+        stView.addTableButtons();
         Stage stage = (Stage) btnClose.getScene().getWindow();
         stage.close();
     }

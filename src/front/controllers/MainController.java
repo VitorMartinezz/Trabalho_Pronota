@@ -54,6 +54,8 @@ public class MainController {
         AnchorPane ap = fxmlLoader.load();
         if(ViewName == "views/GradesView.fxml")
             BuildScreenUtil.setGradesView((GradesViewController) fxmlLoader.getController());
+        if(ViewName == "views/StudyView.fxml")
+            BuildScreenUtil.setStudyView((StudyViewController) fxmlLoader.getController());
         apViewer.getChildren().removeAll();
         apViewer.getChildren().setAll(ap);
     }

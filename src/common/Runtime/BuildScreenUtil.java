@@ -3,6 +3,7 @@ package common.Runtime;
 import com.sun.org.apache.bcel.internal.util.ClassLoader;
 import front.controllers.GradesViewController;
 import front.controllers.RegisterGradesController;
+import front.controllers.StudyViewController;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -23,6 +24,15 @@ public class BuildScreenUtil {
 
     public static GradesViewController gradesView;
 
+    public static StudyViewController getStudyView() {
+        return studyView;
+    }
+
+    public static void setStudyView(StudyViewController studyView) {
+        BuildScreenUtil.studyView = studyView;
+    }
+
+    public static StudyViewController studyView;
 
     public static void createScreen(Parent root, String title){
         Scene scene = new Scene(root);
