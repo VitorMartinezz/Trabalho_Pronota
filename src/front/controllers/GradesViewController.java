@@ -87,6 +87,15 @@ public class GradesViewController {
         if (!us.isEmpty()) {
             cbSubjects_Changed();
         }
+
+        if(UserLoggedUtil.getSession().getRole().getId() == 2){
+            btnRegisterGrades.setDisable(true);
+            btnRegisterSubjects.setDisable(true);
+            cbSubjects.setDisable(true);
+        }
+        else{
+            btnCreateSubject.setVisible(false);
+        }
     }
 
     public ObservableList<GradesTableViewModel> gradeList() {

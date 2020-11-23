@@ -38,6 +38,12 @@ public class MainController {
         resetColor();
         btnHome.setOpacity(1);
         icon1.setOpacity(1);
+        if(UserLoggedUtil.getSession().getRole().getId() == 2){
+            btnCalender.setVisible(false);
+            btnFeedback.setVisible(false);
+            icon4.setVisible(false);
+            icon5.setVisible(false);
+        }
     }
 
     public void btnClose_Click() throws IOException {

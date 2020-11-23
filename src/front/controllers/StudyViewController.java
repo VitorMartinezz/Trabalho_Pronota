@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXComboBox;
 import business.ContentBusiness;
 import business.SubjectBusiness;
 import common.Runtime.BuildScreenUtil;
+import common.Runtime.UserLoggedUtil;
 import common.VO.Content;
 import common.VO.Subject;
 import common.auxClasses.ContentTableViewModel;
@@ -69,6 +70,10 @@ public class StudyViewController {
 
         table.setItems(gradeList());
         addTableButtons();
+
+        if(UserLoggedUtil.getSession().getRole().getId() == 1){
+            btnRegisterContent.setVisible(false);
+        }
     }
     
     @FXML
