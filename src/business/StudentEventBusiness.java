@@ -1,6 +1,5 @@
 package business;
 
-import DAO.EventMySQLDAO;
 import DAO.StudentEventMySQLDAO;
 import common.VO.StudentEvent;
 import common.VO.User;
