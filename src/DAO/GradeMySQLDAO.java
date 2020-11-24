@@ -81,9 +81,9 @@ public class GradeMySQLDAO {
         }
     }
 
-    public static boolean deleteSubject(Subject subject) {
+    public static boolean deleteSubject(GradesUserSubject subject) {
+        EntityManager em = SessionUtil.getSession();
         try {
-            EntityManager em = SessionUtil.getSession();
             Session session = em.unwrap(Session.class);
 
             em.getTransaction().begin();
@@ -92,6 +92,7 @@ public class GradeMySQLDAO {
 
             return true;
         } catch (Exception e) {
+            em.getTransaction().rollback();
             return false;
         }
     }

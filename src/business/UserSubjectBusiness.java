@@ -14,4 +14,11 @@ public class UserSubjectBusiness {
     public List<UserSubject> getAll(User user) {
         return UserSubjectMySQLDAO.getUserSubject(user);
     }
+
+    public boolean deleteAll(UserSubject user) {
+        GradesBusiness GB = new GradesBusiness();
+        GB.deleteByUserSubject(user);
+        
+        return UserSubjectMySQLDAO.deleteSubject(user);
+    }
 }
