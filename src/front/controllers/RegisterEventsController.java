@@ -73,8 +73,6 @@ public class RegisterEventsController {
     }
     @FXML
     private void btnSalvar_Click() {
-
-
         Date data = java.sql.Date.valueOf(dpDataEvento.getValue());
         EventTypes event_types = (EventTypes) cbTipoEvento.getSelectionModel().getSelectedItem();
         UserSubject users = (UserSubject) cbSubjects.getSelectionModel().getSelectedItem();

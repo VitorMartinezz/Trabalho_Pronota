@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class MainController {
     public AnchorPane apViewer;
-    public JFXButton btnClose;
+    public JFXButton btnClose2;
     public JFXButton btnGrades;
     public JFXButton btnStudy;
     public JFXButton btnCalender;
@@ -42,7 +42,7 @@ public class MainController {
 
     public void btnClose_Click() throws IOException {
 
-        Stage mainStage = (Stage)btnClose.getScene().getWindow();
+        Stage mainStage = (Stage)btnClose2.getScene().getWindow();
         mainStage.close();
         Parent root = FXMLLoader.load(Main.class.getResource("views/LoginWindow.fxml"));
         UserLoggedUtil.cleanSession();

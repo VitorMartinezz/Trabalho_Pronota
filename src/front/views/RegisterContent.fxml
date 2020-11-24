@@ -30,7 +30,7 @@
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <JFXButton fx:id="btnClose" onMouseClicked="#btnClose_Click" alignment="CENTER" contentDisplay="CENTER" layoutX="750.0" layoutY="11.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #6d2aff; -fx-background-radius: 15;" text=" " textAlignment="CENTER">
+                  <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" layoutX="750.0" layoutY="11.0" onMouseClicked="#btnClose_Click" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #6d2aff; -fx-background-radius: 15;" text=" " textAlignment="CENTER">
                      <graphic>
                         <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.75em" wrappingWidth="16.888889030173974" />
                      </graphic>
@@ -52,7 +52,7 @@
                               <JFXComboBox fx:id="cbSubjects" focusColor="#b19cd9" layoutX="110.0" layoutY="23.0" prefHeight="25.0" prefWidth="110.0" unFocusColor="#b19cd9" />
                            </children>
                         </AnchorPane>
-                        <JFXButton fx:id="btnSave" onMouseClicked="#btnSave_Click" layoutX="666.0" layoutY="344.0" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #6d2aff;" text="SALVAR" textFill="WHITE" />
+                        <JFXButton fx:id="btnSave" layoutX="666.0" layoutY="344.0" onMouseClicked="#btnSave_Click" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #6d2aff;" text="SALVAR" textFill="WHITE" />
                         <AnchorPane layoutX="20.0" layoutY="56.0" prefHeight="78.0" prefWidth="741.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
                            <children>
                               <Text fill="WHITE" layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
@@ -84,15 +84,15 @@
                         </AnchorPane>
                         <AnchorPane layoutX="20.0" layoutY="145.0" prefHeight="72.0" prefWidth="358.0" style="-fx-background-color: #6237a0; -fx-background-radius: 15;">
                            <children>
-                              <Text fill="WHITE" layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de Formato" textAlignment="CENTER">
+                              <Text fill="WHITE" layoutX="27.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione o arquivo" textAlignment="CENTER" wrappingWidth="256.609375">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXComboBox focusColor="#b19cd9" layoutX="230.0" layoutY="24.0" prefHeight="25.0" prefWidth="110.0" unFocusColor="#b19cd9" />
+                              <FontAwesomeIcon fill="WHITE" glyphName="ARROW_RIGHT" layoutX="295.0" layoutY="48.0" size="3em" />
                            </children>
                         </AnchorPane>
-                        <JFXButton fx:id="btnFileChooser" onMouseClicked="#fileChooser_Click" alignment="CENTER" contentDisplay="CENTER" layoutX="391.0" layoutY="145.0" prefHeight="72.0" prefWidth="66.0" style="-fx-background-color: #6d2aff; -fx-background-radius: 15;" text=" ">
+                        <JFXButton fx:id="btnFileChooser" alignment="CENTER" contentDisplay="CENTER" layoutX="391.0" layoutY="145.0" onMouseClicked="#fileChooser_Click" prefHeight="72.0" prefWidth="66.0" style="-fx-background-color: #6d2aff; -fx-background-radius: 15;" text=" ">
                            <graphic>
                               <FontAwesomeIcon fill="WHITE" glyphName="FILE" size="2em" wrappingWidth="20.571428298950195" />
                            </graphic>
