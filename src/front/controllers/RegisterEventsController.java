@@ -51,6 +51,7 @@ public class RegisterEventsController {
         ObservableList<EventTypes> options2 = FXCollections.observableArrayList(event_type);
         cbTipoEvento.setItems(options2);
         cbTipoEvento.getSelectionModel().selectFirst();
+
     }
 
 

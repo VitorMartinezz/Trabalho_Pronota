@@ -60,7 +60,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXTextField fx:id="tfTitle" focusColor="#b19cd9" layoutX="142.0" layoutY="19.0" prefHeight="25.0" prefWidth="578.0" unFocusColor="#b19cd9">
+                              <JFXTextField fx:id="tfTitle" style="-fx-text-fill: white;" focusColor="#b19cd9" layoutX="142.0" layoutY="19.0" prefHeight="25.0" prefWidth="578.0" unFocusColor="#b19cd9">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -75,7 +75,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXTextField fx:id="tfLink" focusColor="#b19cd9" layoutX="142.0" layoutY="19.0" prefHeight="25.0" prefWidth="578.0" unFocusColor="#b19cd9">
+                              <JFXTextField fx:id="tfLink" style="-fx-text-fill: white;" focusColor="#b19cd9" layoutX="142.0" layoutY="19.0" prefHeight="25.0" prefWidth="578.0" unFocusColor="#b19cd9">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
