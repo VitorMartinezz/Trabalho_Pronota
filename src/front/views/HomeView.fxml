@@ -3,6 +3,8 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -71,124 +73,16 @@
                <children>
                   <BorderPane layoutX="7.0" layoutY="9.0" prefHeight="449.0" prefWidth="512.0" style="-fx-background-radius: 25; -fx-background-color: #B19CD9;">
                      <top>
-                        <BorderPane prefHeight="67.0" prefWidth="443.0" style="-fx-background-color: #6237a0; -fx-background-insets: 0; -fx-background-radius: 25;" BorderPane.alignment="CENTER">
-                           <center>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="SEGUNDA-FEIRA" BorderPane.alignment="CENTER">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Text>
-                           </center>
-                        </BorderPane>
+                        <BorderPane prefHeight="67.0" prefWidth="443.0" style="-fx-background-color: #B19CD9; -fx-background-insets: 0; -fx-background-radius: 25;" BorderPane.alignment="CENTER" />
                      </top>
                      <center>
                         <AnchorPane prefHeight="323.0" prefWidth="457.0" BorderPane.alignment="CENTER">
                            <children>
-                              <GridPane layoutX="-1.0" layoutY="-3.0" prefHeight="377.0" prefWidth="530.0">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="273.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="10.0" prefWidth="257.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria I" textAlignment="CENTER" wrappingWidth="270.7734375" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7:15 - 8:55" textAlignment="CENTER" wrappingWidth="258.77734375" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria II" textAlignment="CENTER" wrappingWidth="271.16015625" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9:05 - 10:45" textAlignment="CENTER" wrappingWidth="254.71484375" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria III" textAlignment="CENTER" wrappingWidth="271.16015625" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" wrappingWidth="251.609375" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria IV" textAlignment="CENTER" wrappingWidth="267.6796875" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" wrappingWidth="251.609375" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria V" textAlignment="CENTER" wrappingWidth="270.29296875" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                       <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" wrappingWidth="253.609375" BorderPane.alignment="CENTER">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </center>
-                                    </BorderPane>
-                                 </children>
-                              </GridPane>
+                              <ImageView fitHeight="344.0" fitWidth="547.0" layoutX="20.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/undraw_studying_s3l7.png" />
+                                 </image>
+                              </ImageView>
                            </children></AnchorPane>
                      </center>
                   </BorderPane>

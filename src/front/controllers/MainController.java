@@ -38,6 +38,8 @@ public class MainController {
             icon4.setVisible(false);
             icon5.setVisible(false);
         }
+        btnFeedback.setVisible(false);
+        icon5.setVisible(false);
     }
 
     public void btnClose_Click() throws IOException {
