@@ -1,6 +1,5 @@
 package common.VO;
 
-import common.generic.model;
 import java.util.Date;
 
 import javax.persistence.Entity;

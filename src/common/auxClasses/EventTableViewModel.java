@@ -1,5 +1,4 @@
 package common.auxClasses;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 

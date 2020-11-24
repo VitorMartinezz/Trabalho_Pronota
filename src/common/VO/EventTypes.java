@@ -1,7 +1,5 @@
 package common.VO;
 
-import common.generic.model;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

@@ -3,9 +3,6 @@ package front.services.validators;
 import com.jfoenix.validation.base.ValidatorBase;
 import javafx.scene.control.TextInputControl;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class ConfirmPWValidator extends ValidatorBase {
     String password;
     public ConfirmPWValidator(String password, String message) {
