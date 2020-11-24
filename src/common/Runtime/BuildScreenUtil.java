@@ -1,6 +1,7 @@
 package common.Runtime;
 
 import com.sun.org.apache.bcel.internal.util.ClassLoader;
+import front.controllers.CalendarViewController;
 import front.controllers.GradesViewController;
 import front.controllers.RegisterGradesController;
 import front.controllers.StudyViewController;
@@ -33,6 +34,16 @@ public class BuildScreenUtil {
     }
 
     public static StudyViewController studyView;
+
+    public static CalendarViewController getCalendarView() {
+        return calendarView;
+    }
+
+    public static void setCalendarView(CalendarViewController calendarView) {
+        BuildScreenUtil.calendarView = calendarView;
+    }
+
+    public static CalendarViewController calendarView;
 
     public static void createScreen(Parent root, String title){
         Scene scene = new Scene(root);

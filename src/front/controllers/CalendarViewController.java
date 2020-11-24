@@ -44,8 +44,9 @@ public class CalendarViewController {
         colEventType.setCellValueFactory(new PropertyValueFactory<>("type_event"));
         colSubject.setCellValueFactory(new PropertyValueFactory<>("subject"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
-
         table.setItems(gradeList());
+        btnDelete.setVisible(false);
+        btnEdit.setVisible(false);
     }
     @FXML
     private void btnRegisterEvents_Click() throws IOException {

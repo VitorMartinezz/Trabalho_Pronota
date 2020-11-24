@@ -1,5 +1,9 @@
 package front.controllers;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -7,7 +11,9 @@ import java.text.SimpleDateFormat;
 import business.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
 import common.VO.EventTypes;
 import common.VO.UserSubject;
@@ -18,13 +24,14 @@ import common.VO.StudentEvent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
 import java.util.List;
 
 public class RegisterEventsController {
     public JFXButton btnClose;
-    public JFXTextField txtDataEvento;
+    public DatePicker dpDataEvento;
     public JFXComboBox cbTipoEvento;
     public JFXComboBox cbSubjects;
 
@@ -33,7 +40,6 @@ public class RegisterEventsController {
         UserSubjectBusiness usb = new UserSubjectBusiness();
         User user = UserLoggedUtil.getSession();
         List<UserSubject> us = usb.getAll(user);
-        txtDataEvento.setText("01/01/2020");
 
         ObservableList<UserSubject> options = FXCollections.observableArrayList(us);
         cbSubjects.setItems(options);
@@ -69,7 +75,7 @@ public class RegisterEventsController {
     private void btnSalvar_Click() {
 
 
-        Date data = DateValidator (txtDataEvento.getText());
+        Date data = java.sql.Date.valueOf(dpDataEvento.getValue());
         EventTypes event_types = (EventTypes) cbTipoEvento.getSelectionModel().getSelectedItem();
         UserSubject users = (UserSubject) cbSubjects.getSelectionModel().getSelectedItem();
 
@@ -100,6 +106,8 @@ public class RegisterEventsController {
 
         seb.createStudentEvent(student_event);
 
+        CalendarViewController test = (CalendarViewController) BuildScreenUtil.getCalendarView();
+        test.table.setItems(test.gradeList());
         Stage LoginStage = (Stage) btnClose.getScene().getWindow();
         LoginStage.close();
     }
@@ -112,7 +120,7 @@ public class RegisterEventsController {
 
     private void ClearAllFields(){
 
-        txtDataEvento.setText("");
+        dpDataEvento.setValue(LocalDate.MIN);
         cbTipoEvento.getSelectionModel().select(-1);
 
     }

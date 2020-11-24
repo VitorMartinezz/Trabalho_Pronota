@@ -62,6 +62,8 @@ public class MainController {
             BuildScreenUtil.setGradesView((GradesViewController) fxmlLoader.getController());
         if(ViewName == "views/StudyView.fxml")
             BuildScreenUtil.setStudyView((StudyViewController) fxmlLoader.getController());
+        if(ViewName == "views/CalenderView.fxml")
+            BuildScreenUtil.setCalendarView((CalendarViewController) fxmlLoader.getController());
         apViewer.getChildren().removeAll();
         apViewer.getChildren().setAll(ap);
     }
