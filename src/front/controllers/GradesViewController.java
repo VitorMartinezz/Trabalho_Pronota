@@ -156,13 +156,15 @@ public class GradesViewController {
         setLbFinalAverage();
         int i = 0;
         for (GradesTableViewModel gtvm : table.getItems()) {
-            int subjectId = userSubject.getSubject().getId();
-            int modelId = gtvm.getId();
-            if (subjectId == modelId) {
-                table.getSelectionModel().select(i);
-                break;
+            if(userSubject != null) {
+                int subjectId = userSubject.getSubject().getId();
+                int modelId = gtvm.getId();
+                if (subjectId == modelId) {
+                    table.getSelectionModel().select(i);
+                    break;
+                }
+                i++;
             }
-            i++;
         }
     }
 

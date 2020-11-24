@@ -1,9 +1,6 @@
 package front.controllers;
 
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Calendar;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -11,8 +8,6 @@ import java.text.SimpleDateFormat;
 import business.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXTextField;
 import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
 import common.VO.EventTypes;
@@ -24,6 +19,7 @@ import common.VO.StudentEvent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
@@ -52,6 +48,14 @@ public class RegisterEventsController {
         cbTipoEvento.setItems(options2);
         cbTipoEvento.getSelectionModel().selectFirst();
 
+        dpDataEvento.setValue(LocalDate.now());
+
+        dpDataEvento.setDayCellFactory(d ->
+        new DateCell() {
+            @Override public void updateItem(LocalDate item, boolean empty) {
+                super.updateItem(item, empty);
+                setDisable(item.isBefore(LocalDate.now()));
+            }});
     }
 
 
@@ -61,17 +65,6 @@ public class RegisterEventsController {
         stage.close();
     }
 
-    private Date DateValidator(String date) {
-        Date date1 = null;
-        try {
-            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            date1 = (java.util.Date)formatter.parse(date);
-        } catch (Exception e) {
-
-            return null;
-        }
-        return date1;
-    }
     @FXML
     private void btnSalvar_Click() {
         Date data = java.sql.Date.valueOf(dpDataEvento.getValue());

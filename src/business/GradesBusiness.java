@@ -18,4 +18,12 @@ public class GradesBusiness {
         return GradeMySQLDAO.getAfGrades(user);
     }
 
+    public void deleteByUserSubject(UserSubject gradesSubject) {
+        List<GradesUserSubject> gUSList = this.getAll(gradesSubject);
+        for(GradesUserSubject gus : gUSList) {
+            GradeMySQLDAO.deleteSubject(gus);
+        }
+        
+        return;
+    }
 }

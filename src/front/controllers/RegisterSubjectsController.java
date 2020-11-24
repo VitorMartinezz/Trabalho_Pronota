@@ -1,6 +1,7 @@
 package front.controllers;
 
 import business.SubjectBusiness;
+import business.UserBusiness;
 import business.UserSubjectBusiness;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -92,6 +93,21 @@ public class RegisterSubjectsController {
     }
 
     private void ClearAllFields(){
+
+        UserSubjectBusiness USB = new UserSubjectBusiness();
+        User user = UserLoggedUtil.getSession();
+        List<UserSubject> US = USB.getAll(user);
+
+        for(UserSubject ub: US) {
+            USB.deleteAll(ub);
+        }
+        
+        cbSubject1.setDisable(false);
+        cbSubject2.setDisable(false);
+        cbSubject3.setDisable(false);
+        cbSubject4.setDisable(false);
+        cbSubject5.setDisable(false);
+        cbSubject6.setDisable(false);
 
         cbSubject1.getSelectionModel().select(-1);
         cbSubject2.getSelectionModel().select(-1);

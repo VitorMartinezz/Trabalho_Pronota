@@ -5,6 +5,7 @@ import java.util.List;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.RequiredFieldValidator;
 
 import business.ContentBusiness;
 import business.SubjectBusiness;
@@ -13,9 +14,14 @@ import common.Runtime.UserLoggedUtil;
 import common.VO.Content;
 import common.VO.Subject;
 import common.VO.User;
+import de.jensd.fx.glyphs.GlyphsDude;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
+import front.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.io.File;
@@ -36,6 +42,30 @@ public class RegisterContentController {
         ObservableList<Subject> options = FXCollections.observableArrayList(subjects);
         cbSubjects.setItems(options);
         cbSubjects.getSelectionModel().selectFirst();
+
+        createValidatorsForFields();
+    }
+
+    private void createValidatorsForFields() {
+        RequiredFieldValidator requiredFieldValidatorUsername = new RequiredFieldValidator("Nome Inválido!");
+        requiredFieldValidatorUsername.setIcon(GlyphsDude.createIcon(FontAwesomeIcons.WARNING));
+
+        tfTitle.getValidators().add(requiredFieldValidatorUsername);
+        tfTitle.focusedProperty().addListener((o, oldVal, newVal) -> {
+            if (!newVal) {
+                tfTitle.validate();
+            }
+        });
+
+        RequiredFieldValidator requiredFieldValidatorPassword = new RequiredFieldValidator("Link Inválido!");
+        requiredFieldValidatorPassword.setIcon(GlyphsDude.createIcon(FontAwesomeIcons.WARNING));
+
+        tfLink.getValidators().add(requiredFieldValidatorPassword);
+        tfLink.focusedProperty().addListener((o, oldVal, newVal) -> {
+            if (!newVal) {
+                tfLink.validate();
+            }
+        });
     }
 
     @FXML
@@ -78,7 +108,18 @@ public class RegisterContentController {
             float sizeInKb = size / 1024;
 
             if(sizeInKb > 2000) {
-                //TODO - colocar erro pro usuario
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/dialogs/MessageDialogWindow.fxml"));
+                Parent root = fxmlLoader.load();
+
+                MessageDialogController controller = fxmlLoader.getController();
+                controller.txtHeader.setText("ERRO");
+                controller.txtMessage.setText("Arquivo tem mais de 2MB");
+
+                try{
+                    BuildScreenUtil.createScreen(root, "Error");
+                } catch (Exception e) {
+                    System.out.println("");
+                }
                 return;
             }
 
