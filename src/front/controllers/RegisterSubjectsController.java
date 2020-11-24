@@ -9,6 +9,7 @@ import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
 import common.VO.Area;
 import common.VO.Subject;
+import common.VO.User;
 import common.VO.UserSubject;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -40,6 +41,46 @@ public class RegisterSubjectsController {
         cbSubject4.setItems(options);
         cbSubject5.setItems(options);
         cbSubject6.setItems(options);
+
+        UserSubjectBusiness USB = new UserSubjectBusiness();
+        User user = UserLoggedUtil.getSession();
+        List<UserSubject> US = USB.getAll(user);
+
+        if(US.size() > 0) {
+            int count = 0;
+            
+            for(UserSubject userBusiness: US) {
+                Subject subject = userBusiness.getSubject();
+
+                switch(count) {
+                    case 0:
+                        cbSubject1.getSelectionModel().select(options.indexOf(subject));
+                        cbSubject1.setDisable(true);
+                        break;
+                    case 1:
+                        cbSubject2.getSelectionModel().select(options.indexOf(subject));
+                        cbSubject2.setDisable(true);
+                        break;
+                    case 2:
+                        cbSubject3.getSelectionModel().select(options.indexOf(subject));
+                        cbSubject3.setDisable(true);
+                        break;
+                    case 3:
+                        cbSubject4.getSelectionModel().select(options.indexOf(subject));
+                        cbSubject4.setDisable(true);
+                        break;
+                    case 4:
+                        cbSubject5.getSelectionModel().select(options.indexOf(subject));
+                        cbSubject5.setDisable(true);
+                        break;
+                    case 5:
+                        cbSubject6.getSelectionModel().select(options.indexOf(subject));
+                        cbSubject6.setDisable(true);
+                        break;
+                }
+                count++;
+            }
+        }
     }
 
     public void btnClose_Click(){
@@ -54,37 +95,6 @@ public class RegisterSubjectsController {
         Subject subject4 = (Subject) cbSubject4.getSelectionModel().getSelectedItem();
         Subject subject5 = (Subject) cbSubject5.getSelectionModel().getSelectedItem();
         Subject subject6 = (Subject) cbSubject6.getSelectionModel().getSelectedItem();
-
-        // boolean isRepeated1 = subject1 != null && subject1.getId() == subject3.getId() || (subject2 != null && subject1.getId() == subject2.getId()) || subject1.getId() == subject4.getId() || subject1.getId() == subject5.getId() || subject1.getId() == subject6.getId();
-        // boolean isRepeated2 = subject2 != null && (subject1 != null && subject1.getId() == subject2.getId()) || subject2.getId() == subject3.getId() || subject2.getId() == subject4.getId()|| subject2.getId() == subject5.getId()|| subject2.getId() == subject6.getId();
-        // boolean isRepeated3 = subject3 != null && (subject2 != null && subject3.getId() == subject2.getId()) || subject1.getId() == subject3.getId() || subject3.getId() == subject4.getId()|| subject3.getId() == subject5.getId()|| subject3.getId() == subject6.getId();
-        // boolean isRepeated4 = subject4 != null && (subject2 != null && subject4.getId() == subject2.getId()) || subject4.getId() == subject3.getId() || subject3.getId() == subject4.getId()|| subject4.getId() == subject5.getId()|| subject4.getId() == subject6.getId();
-        // boolean isRepeated5 = subject5 != null && (subject2 != null && subject5.getId() == subject2.getId() || subject5.getId()) == subject3.getId() || subject5.getId() == subject4.getId()|| subject4.getId() == subject5.getId()|| subject5.getId() == subject6.getId();
-        // boolean isRepeated6 = subject6 != null && (subject2 != null && subject6.getId() == subject2.getId()) || subject6.getId() == subject3.getId() || subject6.getId() == subject4.getId()|| subject4.getId() == subject6.getId()|| subject6.getId() == subject6.getId();
-
-        // if(isRepeated1) {
-        //     return;
-        // }
-
-        // if(isRepeated2) {
-        //     return;
-        // }
-
-        // if(isRepeated3) {
-        //     return;
-        // }
-
-        // if(isRepeated4) {
-        //     return;
-        // }
-
-        // if(isRepeated5) {
-        //     return;
-        // }
-
-        // if(isRepeated6) {
-        //     return;
-        // }
 
         UserSubjectBusiness ub = new UserSubjectBusiness();
 

@@ -74,6 +74,14 @@ public class RegisterContentController {
         }
 
         try {
+            long size = Files.size(selectedFile.toPath());
+            float sizeInKb = size / 1024;
+
+            if(sizeInKb > 2000) {
+                //TODO - colocar erro pro usuario
+                return;
+            }
+
             byte[] fileContent = Files.readAllBytes(selectedFile.toPath());
             content.setContent(fileContent);
             content.setFileName(selectedFile.getName());
