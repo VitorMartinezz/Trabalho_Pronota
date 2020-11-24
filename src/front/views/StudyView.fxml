@@ -52,7 +52,7 @@
                                         </Text>
                                     </left>
                                     <center>
-                                        <JFXComboBox fx:id="cbSubjects" stylesheets="@css/createSubject.css" onAction="#onSubjectChange" focusColor="#405aa8" prefHeight="47.0" prefWidth="190.0" unFocusColor="#b19cd9" BorderPane.alignment="CENTER" />
+                                        <JFXComboBox fx:id="cbSubjects" stylesheets="@css/createSubject.css" onAction="#onSubjectChange" focusColor="#b19cd9" prefHeight="47.0" prefWidth="190.0" unFocusColor="#b19cd9" BorderPane.alignment="CENTER" />
                                     </center>
                                 </BorderPane>
                                 <JFXButton fx:id="btnRegisterContent" onMouseClicked="#btnRegisterContent_Click" layoutX="927.0" layoutY="61.0" prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: #6237a0;" text="Cadastrar Conteúdo" textFill="WHITE" />

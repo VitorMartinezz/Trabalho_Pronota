@@ -59,7 +59,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <JFXComboBox fx:id="cbArea" stylesheets="@css/createSubject.css" style=".combo-box .cell:selected {-fx-text-fill: white;}" focusColor="#e8deff" layoutX="91.0" layoutY="27.0" prefHeight="25.0" prefWidth="134.0" unFocusColor="#e8deff" />
+                              <JFXComboBox fx:id="cbArea" stylesheets="@css/createSubject.css" style=".combo-box .cell:selected {-fx-text-fill: white;}" focusColor="#b19cd9" layoutX="91.0" layoutY="27.0" prefHeight="25.0" prefWidth="134.0" unFocusColor="#b19cd9" />
                            </children>
                         </AnchorPane>
                         <JFXButton fx:id="btnClearFields" onMouseClicked="#btnClearFields_Click" layoutX="556.0" layoutY="344.0" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #FF0000;" text="Limpar Campos" textFill="WHITE" />
