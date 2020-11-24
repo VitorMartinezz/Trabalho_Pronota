@@ -5,8 +5,12 @@ import business.SubjectBusiness;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.RequiredFieldValidator;
+
 import common.VO.Area;
 import common.VO.Subject;
+import de.jensd.fx.glyphs.GlyphsDude;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -30,6 +34,31 @@ public class CreateSubjectController {
 
         ObservableList<Area> options = FXCollections.observableArrayList(areas);
         cbArea.setItems(options);
+        cbArea.getSelectionModel().selectFirst();
+
+        createValidatorsForFields();
+    }
+
+    private void createValidatorsForFields() {
+        RequiredFieldValidator requiredFieldValidatorUsername = new RequiredFieldValidator("Nome Inválida!");
+        requiredFieldValidatorUsername.setIcon(GlyphsDude.createIcon(FontAwesomeIcons.WARNING));
+
+        txtName.getValidators().add(requiredFieldValidatorUsername);
+        txtName.focusedProperty().addListener((o, oldVal, newVal) -> {
+            if (!newVal) {
+                txtName.validate();
+            }
+        });
+
+        RequiredFieldValidator requiredFieldValidatorPassword = new RequiredFieldValidator("Descrição Inválida!");
+        requiredFieldValidatorPassword.setIcon(GlyphsDude.createIcon(FontAwesomeIcons.WARNING));
+
+        txtDescription.getValidators().add(requiredFieldValidatorPassword);
+        txtDescription.focusedProperty().addListener((o, oldVal, newVal) -> {
+            if (!newVal) {
+                txtDescription.validate();
+            }
+        });
     }
 
     public void btnClose_Click() {

@@ -157,6 +157,17 @@ public class RegisterGradesController {
 
 
     private void SaveGrades(UserSubject user, String grade, int gradeType, int sequence, GradesUserSubject gradesUserSubject) {
+        Float gradeAux;
+        try {
+            gradeAux = Float.parseFloat(grade);
+            if(gradeAux < 0.0 || gradeAux > 10.0) {
+                return;
+            }
+        } catch(Exception e) {
+            return;
+        }
+        
+        
         gradesUserSubject.setUserSubject(user);
         gradesUserSubject.setGradeTypes(populateGradeType(gradeType));
         gradesUserSubject.setGrade(Float.parseFloat(grade));
