@@ -134,13 +134,13 @@ public class DBUtil {
             Subject cec = new Subject();
             cec.setId(2); 
             cec.setDescription("CONTABILIDADE E CUSTOS"); 
-            cec.setName("CONTABILIDADE E CUSTOS"); 
+            cec.setName("CONT. E CUSTOS"); 
             cec.setArea(area);
 
             Subject cea = new Subject();
             cea.setId(3); 
             cea.setDescription("CONTROLE E AUTOMAÇÃO"); 
-            cea.setName("CONTROLE E AUTOMAÇÃO"); 
+            cea.setName("CTR E AUTOMAÇÃO"); 
             cea.setArea(area);
 
             Subject ec = new Subject();
@@ -152,7 +152,7 @@ public class DBUtil {
             Subject egsof = new Subject();
             egsof.setId(5); 
             egsof.setDescription("ENGENHARIA DE SOFTWARE"); 
-            egsof.setName("ENGENHARIA DE SOFTWARE"); 
+            egsof.setName("ENG. DE SOFTWARE"); 
             egsof.setArea(area);
 
             em.getTransaction().begin();

@@ -64,6 +64,10 @@ public class GradesViewController {
 
     @FXML
     protected void initialize() {
+        initialMethod();
+    }
+
+    public void initialMethod() {
         UserSubjectBusiness usb = new UserSubjectBusiness();
         User user = UserLoggedUtil.getSession();
         List<UserSubject> us = usb.getAll(user);

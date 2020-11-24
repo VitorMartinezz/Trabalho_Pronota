@@ -40,6 +40,10 @@ public class RegisterGradesController {
 
         ObservableList<UserSubject> options = FXCollections.observableArrayList(us);
         cbSubjects.setItems(options);
+
+        if(options.size() > 0) {
+            cbSubjects.getSelectionModel().selectFirst();
+        }
     }
 
     @FXML
