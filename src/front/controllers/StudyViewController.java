@@ -95,11 +95,16 @@ public class StudyViewController {
 
     public void addTableButtons() {
         ObservableList<TableColumn<ContentTableViewModel, ?>> col = table.getColumns();
-        if(col.get(col.size() - 1).getText() == "Ações") {
+        if(col.get(col.size() - 1).getText() == "Baixar") {
             table.getColumns().remove(col.get(col.size() - 1));
         }
+
+        ObservableList<TableColumn<ContentTableViewModel, ?>> col2 = table.getColumns();
+        if(col2.get(col2.size() - 1).getText() == "Curtir") {
+            table.getColumns().remove(col2.get(col2.size() - 1));
+        }
         
-        TableColumn<ContentTableViewModel, Void> colBtn = new TableColumn("Ações");
+        TableColumn<ContentTableViewModel, Void> colBtnBaixar = new TableColumn("Baixar");
         Callback<TableColumn<ContentTableViewModel, Void>, TableCell<ContentTableViewModel, Void>> cellFactory = new Callback<TableColumn<ContentTableViewModel, Void>, TableCell<ContentTableViewModel, Void>>() {
             @Override
             public TableCell<ContentTableViewModel, Void> call(final TableColumn<ContentTableViewModel, Void> param) {
@@ -138,9 +143,44 @@ public class StudyViewController {
             }  
         };
 
-        colBtn.setCellFactory(cellFactory);
+        TableColumn<ContentTableViewModel, Void> colBtnLike = new TableColumn("Curtir");
+        Callback<TableColumn<ContentTableViewModel, Void>, TableCell<ContentTableViewModel, Void>> cellFactory2 = new Callback<TableColumn<ContentTableViewModel, Void>, TableCell<ContentTableViewModel, Void>>() {
+            @Override
+            public TableCell<ContentTableViewModel, Void> call(final TableColumn<ContentTableViewModel, Void> param) {
+                final TableCell<ContentTableViewModel, Void> cell = new TableCell<ContentTableViewModel, Void>() {
 
-        table.getColumns().add(colBtn);
+                    private final Button btn = new Button("Curtir");
+
+                    {
+                        btn.setOnAction((ActionEvent event) -> {
+                            ContentTableViewModel data = getTableView().getItems().get(getIndex());
+                            ContentBusiness CB = new ContentBusiness();
+
+                            CB.addLike(data.getId());
+
+                            table.setItems(gradeList());
+                            addTableButtons();
+                        });
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(btn);
+                        }
+                    }
+                };
+                return cell;
+            }  
+        };
+        colBtnLike.setCellFactory(cellFactory2);
+        colBtnBaixar.setCellFactory(cellFactory);
+
+        table.getColumns().add(colBtnLike);
+        table.getColumns().add(colBtnBaixar);
     }
 
     @FXML

@@ -36,4 +36,17 @@ public class ContentMySQLDAO {
             return null;
         }
     }
+
+    public static Content getContentById(int id) {
+        try {
+            EntityManager em = SessionUtil.getSession();
+
+            Query query = em.createQuery("from tbContents where id = :id").setParameter("id", id);
+            Content content = (Content) query.getSingleResult();
+
+            return content;
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

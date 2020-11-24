@@ -14,4 +14,10 @@ public class ContentBusiness {
     public List<Content> getAllBySubject(Subject subject) {
         return ContentMySQLDAO.getContentBySubject(subject);
     }
+
+    public void addLike(int id) {
+        Content c = ContentMySQLDAO.getContentById(id);
+        c.setLikes(c.getLikes() + 1);
+        this.create(c);
+    }
 }
