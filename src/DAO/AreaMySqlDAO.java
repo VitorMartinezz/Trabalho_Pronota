@@ -2,7 +2,6 @@ package DAO;
 
 import common.Runtime.SessionUtil;
 import common.VO.Area;
-import common.VO.Subject;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
