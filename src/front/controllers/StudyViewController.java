@@ -9,6 +9,7 @@ import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
 import common.VO.Content;
 import common.VO.Subject;
+import common.VO.User;
 import common.auxClasses.ContentTableViewModel;
 import front.Main;
 import javafx.collections.FXCollections;
@@ -176,10 +177,15 @@ public class StudyViewController {
                 return cell;
             }  
         };
-        colBtnLike.setCellFactory(cellFactory2);
+        User user = UserLoggedUtil.getSession();
+
+        if(user.getRole().getId() != 2) {
+            colBtnLike.setCellFactory(cellFactory2);
+            table.getColumns().add(colBtnLike);
+        }
+        
         colBtnBaixar.setCellFactory(cellFactory);
 
-        table.getColumns().add(colBtnLike);
         table.getColumns().add(colBtnBaixar);
     }
 
