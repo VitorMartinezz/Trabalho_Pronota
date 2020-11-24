@@ -1,16 +1,10 @@
 package front.controllers;
 
-import business.ContentBusiness;
-import business.EventBusiness;
 import business.StudentEventBusiness;
 import com.jfoenix.controls.JFXButton;
 import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
-import common.VO.Content;
-import common.VO.Event;
 import common.VO.StudentEvent;
-import common.VO.Subject;
-import common.auxClasses.ContentTableViewModel;
 import front.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

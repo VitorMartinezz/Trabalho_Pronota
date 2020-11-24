@@ -1,7 +1,6 @@
 package front.services.validators;
 
 import com.jfoenix.validation.base.ValidatorBase;
-import javafx.beans.DefaultProperty;
 import javafx.scene.control.TextInputControl;
 
 import java.util.regex.Matcher;

@@ -1,13 +1,10 @@
 package front.controllers;
 
 import business.SubjectBusiness;
-import business.UserBusiness;
 import business.UserSubjectBusiness;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import common.Runtime.BuildScreenUtil;
 import common.Runtime.UserLoggedUtil;
-import common.VO.Area;
 import common.VO.Subject;
 import common.VO.User;
 import common.VO.UserSubject;

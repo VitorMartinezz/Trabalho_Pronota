@@ -1,13 +1,10 @@
 package common.Runtime;
 
-import com.sun.org.apache.bcel.internal.util.ClassLoader;
 import front.controllers.CalendarViewController;
 import front.controllers.GradesViewController;
-import front.controllers.RegisterGradesController;
 import front.controllers.StudyViewController;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;

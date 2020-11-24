@@ -3,20 +3,15 @@ package front.controllers;
 import business.GradesBusiness;
 import business.UserSubjectBusiness;
 import common.Runtime.UserLoggedUtil;
-import common.VO.GradeTypes;
 import common.VO.GradesUserSubject;
 import common.VO.User;
 import common.VO.UserSubject;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.text.Text;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class HomeViewController {
     public Text lblWelCome;

@@ -2,7 +2,6 @@ package front.controllers;
 
 import business.UserBusiness;
 import com.jfoenix.validation.RequiredFieldValidator;
-import com.jfoenix.validation.base.ValidatorBase;
 import common.VO.Role;
 import common.VO.User;
 import de.jensd.fx.glyphs.GlyphsDude;
@@ -19,13 +18,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class RegisterController {
     public JFXButton btnClose;

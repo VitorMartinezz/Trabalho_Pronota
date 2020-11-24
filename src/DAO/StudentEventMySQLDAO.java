@@ -3,7 +3,6 @@ package DAO;
 import common.Runtime.SessionUtil;
 import common.VO.StudentEvent;
 import common.VO.User;
-import org.hibernate.Session;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

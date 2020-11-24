@@ -5,7 +5,6 @@ import business.SubjectBusiness;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import common.Runtime.BuildScreenUtil;
 import common.VO.Area;
 import common.VO.Subject;
 import javafx.collections.FXCollections;
